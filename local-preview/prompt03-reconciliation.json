@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "accounts": [
+    {
+      "account": "Cash / Salary",
+      "expected": 265000,
+      "observed": 265000,
+      "status": "PASS"
+    },
+    {
+      "account": "Expenses",
+      "expected": 58000,
+      "observed": 58000,
+      "status": "PASS"
+    },
+    {
+      "account": "Mutual Funds",
+      "expected": 30000,
+      "observed": 30000,
+      "status": "PASS"
+    },
+    {
+      "account": "Stocks",
+      "expected": 15000,
+      "observed": 15000,
+      "status": "PASS"
+    },
+    {
+      "account": "PPF",
+      "expected": 10000,
+      "observed": 10000,
+      "status": "PASS"
+    },
+    {
+      "account": "NPS",
+      "expected": 5000,
+      "observed": 5000,
+      "status": "PASS"
+    },
+    {
+      "account": "Gold",
+      "expected": 5000,
+      "observed": 5000,
+      "status": "PASS"
+    },
+    {
+      "account": "Fixed Deposit",
+      "expected": 15000,
+      "observed": 15000,
+      "status": "PASS"
+    },
+    {
+      "account": "Emergency",
+      "expected": 6000,
+      "observed": 6000,
+      "status": "PASS"
+    },
+    {
+      "account": "Travel",
+      "expected": 4000,
+      "observed": 4000,
+      "status": "PASS"
+    },
+    {
+      "account": "Chit",
+      "expected": 10000,
+      "observed": 10000,
+      "status": "PASS"
+    }
+  ],
+  "groups": {
+    "CASH": 265000,
+    "EXPENSE": 58000,
+    "INVESTMENT": 80000,
+    "FUND": 20000
+  },
+  "total": 423000,
+  "totalExpenses": 77000,
+  "months": [
+    {
+      "month": "01",
+      "expected": 15000,
+      "observed": 15000,
+      "status": "PASS"
+    },
+    {
+      "month": "02",
+      "expected": 18000,
+      "observed": 18000,
+      "status": "PASS"
+    },
+    {
+      "month": "03",
+      "expected": 18000,
+      "observed": 18000,
+      "status": "PASS"
+    },
+    {
+      "month": "04",
+      "expected": 14000,
+      "observed": 14000,
+      "status": "PASS"
+    },
+    {
+      "month": "05",
+      "expected": 12000,
+      "observed": 12000,
+      "status": "PASS"
+    }
+  ],
+  "activeExpenses": 10,
+  "voidExpenses": 1,
+  "movementCount": 46,
+  "auditRows": 65
+}

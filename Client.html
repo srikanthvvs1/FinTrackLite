@@ -1,0 +1,134 @@
+<script>
+(function(){
+  'use strict';
+  var state={bootstrap:null,page:null,selectedAccountId:'',confirmAction:null,guards:{account:false,movement:false,confirm:false,load:false}};
+  var $=function(id){return document.getElementById(id);};
+
+  function callServer_(method,payload){
+    return new Promise(function(resolve,reject){
+      var runner=google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      if(method==='initializeFinTrackLite')runner.initializeFinTrackLite();
+      else if(method==='getBootstrapData')runner.getBootstrapData();
+      else if(method==='getAccountsPageData')runner.getAccountsPageData(payload);
+      else if(method==='createAccount')runner.createAccount(payload);
+      else if(method==='updateAccount')runner.updateAccount(payload);
+      else if(method==='archiveAccount')runner.archiveAccount(payload);
+      else if(method==='deleteAccount')runner.deleteAccount(payload);
+      else if(method==='recordIncome')runner.recordIncome(payload);
+      else if(method==='addToAccount')runner.addToAccount(payload);
+      else if(method==='withdrawFromAccount')runner.withdrawFromAccount(payload);
+      else if(method==='moveBetweenAccounts')runner.moveBetweenAccounts(payload);
+      else if(method==='updateMovement')runner.updateMovement(payload);
+      else if(method==='voidMovement')runner.voidMovement(payload);
+      else if(method==='getExpenseReport')runner.getExpenseReport(payload);
+      else if(method==='createExpense')runner.createExpense(payload);
+      else if(method==='updateExpense')runner.updateExpense(payload);
+      else if(method==='voidExpense')runner.voidExpense(payload);
+      else reject(new Error('Unsupported server method: '+method));
+    });
+  }
+
+  function unwrap_(response,label){if(!response||response.ok!==true)throw new Error(label+' returned an invalid response.');return response.data;}
+  function errorMessage_(error){return error&&error.message?error.message:'FinTrack Lite could not complete the request.';}
+  function setStartup_(mode){$('loading-state').hidden=mode!=='loading';$('error-state').hidden=mode!=='error';$('startup-panel').hidden=mode==='ready';$('accounts-view').hidden=mode!=='ready'||state.view==='expenses';}
+  function showFormMessage_(id,message){var element=$(id);element.textContent=message||'';element.hidden=!message;}
+  function showDetailMessage_(message){showFormMessage_('detail-message',message);}
+  function toast_(message){var item=document.createElement('div');item.className='toast';item.textContent=message;$('toast-region').appendChild(item);setTimeout(function(){item.remove();},2600);}
+  function formatMoney_(value){var number=Number(value||0);return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',minimumFractionDigits:number%1===0?0:2,maximumFractionDigits:2}).format(number);}
+  function accountById_(id){return state.page&&state.page.accounts.filter(function(account){return account.id===id;})[0];}
+
+  function initialise_(){
+    if(state.guards.load)return;state.guards.load=true;$('retry-button').disabled=true;setStartup_('loading');
+    callServer_('initializeFinTrackLite').then(function(response){unwrap_(response,'Initialisation');return callServer_('getBootstrapData');}).then(function(response){state.bootstrap=unwrap_(response,'Bootstrap');return loadAccounts_({});}).catch(function(error){$('error-message').textContent=errorMessage_(error);setStartup_('error');}).then(function(){state.guards.load=false;$('retry-button').disabled=false;});
+  }
+
+  function loadAccounts_(options){
+    options=options||{};
+    var payload={selectedAccountId:options.selectedAccountId!==undefined?options.selectedAccountId:state.selectedAccountId,activityStartDate:$('activity-start').value||undefined,activityEndDate:$('activity-end').value||undefined,includeArchived:$('include-archived').checked,activityCursor:options.cursor||undefined};
+    return callServer_('getAccountsPageData',payload).then(function(response){var data=unwrap_(response,'Accounts');if(options.append&&state.page){state.page.activity=state.page.activity.concat(data.activity);state.page.hasMore=data.hasMore;state.page.nextCursor=data.nextCursor;}else state.page=data;state.selectedAccountId=data.selectedAccountId;renderAccounts_();setStartup_('ready');$('quick-add-button').disabled=!data.selectedAccount;return data;});
+  }
+
+  function renderAccounts_(){
+    var page=state.page;if(!page)return;
+    if(!$('activity-start').value)$('activity-start').value=page.activityStartDate;
+    if(!$('activity-end').value)$('activity-end').value=page.activityEndDate;
+    renderAccountList_(page.accounts,page.selectedAccountId);
+    renderSelectedAccount_(page.selectedAccount);
+    renderActivity_(page.activity,page.hasMore);
+    populateAccountTypeOptions_(page.accountTypes);
+  }
+
+  function renderAccountList_(accounts,selectedId){
+    var list=$('account-list');list.textContent='';
+    accounts.forEach(function(account){var button=document.createElement('button');button.type='button';button.className='account-row'+(account.id===selectedId?' selected':'');button.dataset.accountId=account.id;button.innerHTML='<span class="account-row-name"></span><span class="account-row-balance"></span><span class="account-row-group"></span>';button.querySelector('.account-row-name').textContent=account.name;button.querySelector('.account-row-balance').textContent=formatMoney_(account.balance);button.querySelector('.account-row-group').textContent=account.accountGroup+(account.active?'':' · Archived');button.addEventListener('click',function(){state.selectedAccountId=account.id;loadAccounts_({selectedAccountId:account.id}).catch(function(error){showDetailMessage_(errorMessage_(error));});});list.appendChild(button);});
+    if(!accounts.length){var empty=document.createElement('p');empty.className='empty-state';empty.textContent='No accounts to show.';list.appendChild(empty);}
+  }
+
+  function renderSelectedAccount_(account){
+    var disabled=!account;
+    $('selected-name').textContent=account?account.name:'Select an account';$('selected-group').textContent=account?account.accountGroup:'';$('selected-group').hidden=!account;$('selected-balance').textContent=account?formatMoney_(account.balance):'—';$('selected-status').textContent=account?(account.active?'Active · '+account.accountType:'Archived · '+account.accountType):'';
+    document.querySelectorAll('[data-action]').forEach(function(button){button.disabled=disabled;});$('edit-account-button').disabled=disabled;$('archive-account-button').disabled=disabled||!account.active;$('delete-account-button').disabled=disabled;showDetailMessage_('');
+  }
+
+  function renderActivity_(rows,hasMore){
+    var list=$('activity-list');list.textContent='';$('activity-count').textContent=rows.length+' shown';
+    if(!rows.length){var empty=document.createElement('p');empty.className='empty-state';empty.textContent='No activity in this date range.';list.appendChild(empty);}
+    rows.forEach(function(row){var item=document.createElement('article');item.className='activity-row';var label=row.description||activityLabel_(row.type);var amountClass=row.signedAmount>0?'positive':row.signedAmount<0?'negative':'';var sign=row.signedAmount>0?'+':'';item.innerHTML='<div class="activity-main"><strong></strong><div class="activity-meta"></div></div><div class="activity-amount '+amountClass+'"></div><div class="activity-actions"></div>';item.querySelector('strong').textContent=label;item.querySelector('.activity-meta').textContent=row.date+' · '+activityLabel_(row.type)+(row.counterpartAccountName?' · '+row.counterpartAccountName:'')+(row.status==='VOID'?' · Void':'');item.querySelector('.activity-amount').textContent=row.status==='VOID'?formatMoney_(0):sign+formatMoney_(row.signedAmount);
+      if(row.entityType==='MOVEMENT'&&row.status==='ACTIVE'){var edit=document.createElement('button');edit.type='button';edit.className='button button-small';edit.textContent='Edit';edit.setAttribute('aria-label','Edit '+label);edit.addEventListener('click',function(){openMovementDialog_(row.type,row);});var voidButton=document.createElement('button');voidButton.type='button';voidButton.className='button button-small button-danger';voidButton.textContent='Void';voidButton.setAttribute('aria-label','Void '+label);voidButton.addEventListener('click',function(){openConfirm_('Void movement','Void “'+label+'”? Its balance effect will be removed.','Void',function(){return callServer_('voidMovement',{id:row.id});},'Movement voided.');});item.querySelector('.activity-actions').appendChild(edit);item.querySelector('.activity-actions').appendChild(voidButton);}
+      list.appendChild(item);
+    });$('load-more-button').hidden=!hasMore;
+  }
+
+  function activityLabel_(type){return {INCOME:'Income',ADD:'Add amount',WITHDRAW:'Withdrawal',MOVE:'Move',EXPENSE:'Expense'}[type]||type;}
+  function populateAccountTypeOptions_(options){var select=$('account-type');if(select.options.length)return;options.forEach(function(option){var element=document.createElement('option');element.value=option.value;element.textContent=option.label;select.appendChild(element);});}
+  function populateAccountSelects_(){var active=state.page.accounts.filter(function(account){return account.active&&!account.deletedAt;});['from-account','to-account'].forEach(function(id){var select=$(id),current=select.value;select.textContent='';active.forEach(function(account){var option=document.createElement('option');option.value=account.id;option.textContent=account.name;select.appendChild(option);});if(active.some(function(account){return account.id===current;}))select.value=current;});}
+
+  function openAccountDialog_(account){
+    var editing=Boolean(account);$('account-form').reset();$('account-id').value=editing?account.id:'';$('account-dialog-title').textContent=editing?'Edit account':'Create account';$('account-submit').textContent=editing?'Save changes':'Create account';$('account-name').value=editing?account.name:'';$('account-notes').value=editing?account.notes:'';$('account-type-field').hidden=editing;$('opening-fields').hidden=editing;$('immutable-note').hidden=!editing;$('account-group-field').hidden=true;$('account-type').disabled=editing;$('account-group').disabled=editing;$('opening-date').disabled=editing;$('opening-balance').disabled=editing;
+    if(!editing){$('account-type').value='CASH';$('opening-date').value=state.page.today;$('opening-balance').value='0';}
+    showFormMessage_('account-form-message','');$('account-dialog').showModal();
+  }
+
+  function syncCustomGroup_(){$('account-group-field').hidden=$('account-type').value!=='CUSTOM';}
+  function submitAccount_(event){event.preventDefault();if(state.guards.account)return;state.guards.account=true;$('account-submit').disabled=true;showFormMessage_('account-form-message','');var editing=Boolean($('account-id').value);var payload=editing?{id:$('account-id').value,name:$('account-name').value,notes:$('account-notes').value}:{name:$('account-name').value,accountType:$('account-type').value,accountGroup:$('account-type').value==='CUSTOM'?$('account-group').value:undefined,openingDate:$('opening-date').value,openingBalance:$('opening-balance').value,notes:$('account-notes').value};callServer_(editing?'updateAccount':'createAccount',payload).then(function(response){var saved=unwrap_(response,'Account');state.selectedAccountId=saved.id;$('account-dialog').close();toast_(editing?'Account updated.':'Account created.');return loadAccounts_({selectedAccountId:saved.id});}).catch(function(error){showFormMessage_('account-form-message',errorMessage_(error));}).then(function(){state.guards.account=false;$('account-submit').disabled=false;});}
+
+  function openMovementDialog_(type,row){
+    var account=state.page.selectedAccount;if(!account)return;if(!account.active&&!row){showDetailMessage_('Archived accounts cannot receive new actions.');return;}
+    populateAccountSelects_();$('movement-form').reset();var editing=Boolean(row);$('movement-id').value=editing?row.id:'';$('movement-type').value=type||'ADD';$('movement-type').disabled=editing;$('movement-date').value=editing?row.date:state.page.today;$('movement-amount').value=editing?row.amount:'';$('movement-description').value=editing?row.description||'':'';$('movement-notes').value=editing?row.notes||'':'';
+    if(editing){var source=state.page.activity.filter(function(activity){return activity.id===row.id;})[0]||row;if(type==='INCOME'||type==='ADD')$('to-account').value=source.toAccountId||account.id;else if(type==='WITHDRAW')$('from-account').value=source.fromAccountId||account.id;else{$('from-account').value=source.fromAccountId||account.id;$('to-account').value=source.toAccountId||'';}}
+    else if(type==='INCOME'||type==='ADD')$('to-account').value=account.id;else{$('from-account').value=account.id;if(type==='MOVE'&&$('to-account').value===account.id){var other=state.page.accounts.filter(function(item){return item.active&&item.id!==account.id;})[0];if(other)$('to-account').value=other.id;}}
+    $('movement-dialog-title').textContent=editing?'Edit '+activityLabel_(type):activityLabel_(type);$('movement-submit').textContent=editing?'Save changes':'Save action';showFormMessage_('movement-form-message','');syncMovementFields_();$('movement-dialog').showModal();
+  }
+
+  function syncMovementFields_(){var type=$('movement-type').value;$('from-account-field').hidden=type==='INCOME'||type==='ADD';$('to-account-field').hidden=type==='WITHDRAW';}
+  function submitMovement_(event){event.preventDefault();if(state.guards.movement)return;state.guards.movement=true;$('movement-submit').disabled=true;showFormMessage_('movement-form-message','');var type=$('movement-type').value;var payload={date:$('movement-date').value,amount:$('movement-amount').value,description:$('movement-description').value,notes:$('movement-notes').value,fromAccountId:type==='WITHDRAW'||type==='MOVE'?$('from-account').value:'',toAccountId:type==='INCOME'||type==='ADD'||type==='MOVE'?$('to-account').value:''};var method={INCOME:'recordIncome',ADD:'addToAccount',WITHDRAW:'withdrawFromAccount',MOVE:'moveBetweenAccounts'}[type];if($('movement-id').value){payload.id=$('movement-id').value;method='updateMovement';}callServer_(method,payload).then(function(response){unwrap_(response,'Money action');$('movement-dialog').close();toast_($('movement-id').value?'Movement updated.':'Money action recorded.');return loadAccounts_({selectedAccountId:state.selectedAccountId});}).catch(function(error){showFormMessage_('movement-form-message',errorMessage_(error));}).then(function(){state.guards.movement=false;$('movement-submit').disabled=false;});}
+
+  function openConfirm_(title,copy,buttonLabel,action,successMessage){state.confirmAction={action:action,successMessage:successMessage};$('confirm-title').textContent=title;$('confirm-copy').textContent=copy;$('confirm-submit').textContent=buttonLabel;showFormMessage_('confirm-message','');$('confirm-dialog').showModal();}
+  function runConfirm_(){if(!state.confirmAction||state.guards.confirm)return;state.guards.confirm=true;$('confirm-submit').disabled=true;var pending=state.confirmAction;pending.action().then(function(response){unwrap_(response,'Action');$('confirm-dialog').close();toast_(pending.successMessage);return refreshCurrent_();}).catch(function(error){showFormMessage_('confirm-message',errorMessage_(error));}).then(function(){state.guards.confirm=false;$('confirm-submit').disabled=false;});}
+  function archiveSelected_(){var account=state.page.selectedAccount;if(!account)return;callServer_('archiveAccount',{id:account.id}).then(function(response){unwrap_(response,'Archive');$('include-archived').checked=true;toast_('Account archived.');return loadAccounts_({selectedAccountId:account.id});}).catch(function(error){showDetailMessage_(errorMessage_(error));});}
+  function deleteSelected_(){var account=state.page.selectedAccount;if(!account)return;if(Math.round(Number(account.balance)*100)!==0){showDetailMessage_('Delete account is available only at '+formatMoney_(0)+'. '+account.name+' still has '+formatMoney_(account.balance)+'.');return;}openConfirm_('Delete account','Delete “'+account.name+'”? Its rows will be retained for historical reports.','Delete account',function(){return callServer_('deleteAccount',{id:account.id});},'Account deleted.');}
+
+  $('retry-button').addEventListener('click',initialise_);$('create-account-button').addEventListener('click',function(){openAccountDialog_(null);});$('account-type').addEventListener('change',syncCustomGroup_);$('account-form').addEventListener('submit',submitAccount_);$('movement-form').addEventListener('submit',submitMovement_);$('movement-type').addEventListener('change',syncMovementFields_);$('quick-add-button').addEventListener('click',function(){$('chooser-dialog').showModal();});document.querySelectorAll('[data-action]').forEach(function(button){button.addEventListener('click',function(){openMovementDialog_(button.dataset.action,null);});});$('edit-account-button').addEventListener('click',function(){openAccountDialog_(state.page.selectedAccount);});$('archive-account-button').addEventListener('click',archiveSelected_);$('delete-account-button').addEventListener('click',deleteSelected_);$('confirm-submit').addEventListener('click',runConfirm_);$('include-archived').addEventListener('change',function(){loadAccounts_({selectedAccountId:state.selectedAccountId}).catch(function(error){showDetailMessage_(errorMessage_(error));});});$('apply-activity-filter').addEventListener('click',function(){loadAccounts_({selectedAccountId:state.selectedAccountId}).catch(function(error){showDetailMessage_(errorMessage_(error));});});$('load-more-button').addEventListener('click',function(){loadAccounts_({selectedAccountId:state.selectedAccountId,cursor:state.page.nextCursor,append:true}).catch(function(error){showDetailMessage_(errorMessage_(error));});});document.querySelectorAll('[data-close-dialog]').forEach(function(button){button.addEventListener('click',function(){$(button.dataset.closeDialog).close();});});
+  var expenseChart=null, expenseReport=null;
+  function options_(id,items,blank){var el=$(id);el.textContent='';if(blank!==undefined){var o=document.createElement('option');o.value='';o.textContent=blank;el.appendChild(o);}items.forEach(function(item){var o=document.createElement('option');o.value=item.id||item.code;o.textContent=item.name||item.label;el.appendChild(o);});}
+  function eligible_(){return state.page.accounts.filter(function(a){return a.active&&!a.deletedAt&&['CASH','EXPENSE'].indexOf(a.accountType)>=0;});}
+  function openExpense_(row){$('expense-form').reset();var sources=eligible_();options_('expense-account',sources);options_('expense-category',state.bootstrap.expenseCategories.filter(function(c){return c.active;}),'Select category');$('expense-category').required=true;$('expense-id').value=row?row.id:'';$('expense-date').value=row?row.date:state.page.today;$('expense-date').max=state.page.today;$('expense-account').value=row?row.accountId:((sources.filter(function(a){return a.name==='Expenses';})[0]||sources[0]||{}).id||'');if(row){$('expense-category').value=row.expenseCategory;$('expense-nature').value=row.expenseNature;$('expense-amount').value=row.amount;$('expense-description').value=row.description;$('expense-notes').value=row.notes;}$('expense-dialog-title').textContent=row?'Edit expense':'Expense';showFormMessage_('expense-form-message','');$('expense-dialog').showModal();}
+  function refreshCurrent_(){return callServer_('getBootstrapData').then(function(r){state.bootstrap=unwrap_(r,'Bootstrap');return state.view==='expenses'?loadExpenses_():loadAccounts_({selectedAccountId:state.selectedAccountId});});}
+  function loadExpenses_(){var p={startDate:$('expense-start').value||undefined,endDate:$('expense-end').value||undefined,category:$('filter-category').value,nature:$('filter-nature').value,accountId:$('filter-account').value};return callServer_('getExpenseReport',p).then(function(r){expenseReport=unwrap_(r,'Expenses');renderExpenses_();showFormMessage_('expense-report-message','');}).catch(function(e){showFormMessage_('expense-report-message',errorMessage_(e));});}
+  function switchView_(view){state.view=view;$('accounts-view').hidden=view!=='accounts';$('expenses-view').hidden=view!=='expenses';document.querySelectorAll('[data-view]').forEach(function(b){b.classList.toggle('active',b.dataset.view===view);});if(view==='accounts')return loadAccounts_({});if(!$('expense-start').value){options_('filter-category',state.bootstrap.expenseCategories,'All categories');options_('filter-account',state.bootstrap.accounts.filter(function(a){return ['CASH','EXPENSE'].indexOf(a.accountType)>=0;}),'All accounts');}return loadExpenses_();}
+  function renderExpenses_(){var r=expenseReport;$('expense-start').value=r.filters.startDate;$('expense-end').value=r.filters.endDate;var summary=$('expense-summary');summary.textContent='';[['Total expenses',formatMoney_(r.total)],['Fixed',formatMoney_(r.fixedTotal)],['Variable',formatMoney_(r.variableTotal)],['Transactions',r.activeTransactionCount]].forEach(function(pair){var card=document.createElement('div');card.className='expense-summary-card';var label=document.createElement('div');label.className='metric-label';label.textContent=pair[0];var value=document.createElement('strong');value.className='metric-value';value.textContent=pair[1];card.append(label,value);summary.appendChild(card);});
+    var categories=r.categoryTotals.filter(function(c){return c.total>0;}), colors=['#176b5a','#d99642','#6385bd','#b06581','#8b8847','#755fa2','#4294a1'];if(expenseChart){expenseChart.destroy();expenseChart=null;}$('expense-chart-wrap').hidden=!r.total;$('expense-empty').hidden=!!r.total;$('expense-legend').textContent='';categories.forEach(function(c,i){var item=document.createElement('p');item.className='expense-legend-item';item.style.borderLeft='5px solid '+colors[i%colors.length];item.textContent=c.label+' · '+formatMoney_(c.total)+' · '+(c.total/r.total*100).toFixed(2)+'%';$('expense-legend').appendChild(item);});
+    if(r.total)expenseChart=new Chart($('expense-chart'),{type:'doughnut',data:{labels:categories.map(function(c){return c.label;}),datasets:[{data:categories.map(function(c){return c.total;}),backgroundColor:categories.map(function(c,i){return colors[i%colors.length];}),borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,cutout:'70%',plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+formatMoney_(ctx.raw)+' / '+(ctx.raw/r.total*100).toFixed(2)+'%';}}}}},plugins:[{id:'centreTotal',afterDraw:function(chart){var ctx=chart.ctx,area=chart.chartArea;ctx.save();ctx.textAlign='center';ctx.fillStyle='#172033';ctx.font='700 20px system-ui';ctx.fillText(formatMoney_(r.total),(area.left+area.right)/2,(area.top+area.bottom)/2+4);ctx.restore();}}]});
+    var list=$('expense-list');list.textContent='';if(!r.rows.length){list.textContent='No expenses in this range.';return;}var table=document.createElement('table');table.className='expense-table';table.innerHTML='<thead><tr><th>Date</th><th>Category / description</th><th>Account</th><th>Nature</th><th>Amount</th><th>Actions</th></tr></thead>';var body=document.createElement('tbody');r.rows.forEach(function(row){var tr=document.createElement('tr'),cat=r.categoryTotals.filter(function(c){return c.code===row.expenseCategory;})[0];[row.date,(cat?cat.label:row.expenseCategory)+(row.description?' · '+row.description:''),row.accountName,row.expenseNature,formatMoney_(row.amount)].forEach(function(value,i){var td=document.createElement('td');td.dataset.label=['Date','Category','Account','Nature','Amount'][i];td.textContent=value;tr.appendChild(td);});var actions=document.createElement('td');actions.className='expense-row-actions';['Edit','Void'].forEach(function(action){var b=document.createElement('button');b.type='button';b.className='button button-small';b.textContent=action;b.addEventListener('click',function(){if(action==='Edit')openExpense_(row);else openConfirm_('Void expense','Void this expense? Its balance effect will be removed.','Void',function(){return callServer_('voidExpense',{id:row.id});},'Expense voided.');});actions.appendChild(b);});tr.appendChild(actions);body.appendChild(tr);});table.appendChild(body);list.appendChild(table);
+  }
+  document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){switchView_(b.dataset.view);});});
+  document.querySelectorAll('[data-quick]').forEach(function(b){b.addEventListener('click',function(){$('chooser-dialog').close();if(b.dataset.quick==='EXPENSE')openExpense_(null);else openMovementDialog_(b.dataset.quick,null);});});
+  $('expense-category').addEventListener('change',function(){var c=state.bootstrap.expenseCategories.filter(function(c){return c.code===$('expense-category').value;})[0];if(c)$('expense-nature').value=c.defaultNature;});
+  $('expense-form').addEventListener('submit',function(e){e.preventDefault();if(state.guards.expense)return;state.guards.expense=true;$('expense-submit').disabled=true;var payload={};['date','account','amount','category','nature','description','notes'].forEach(function(key){payload[{account:'accountId',category:'expenseCategory',nature:'expenseNature'}[key]||key]=$('expense-'+key).value;});var id=$('expense-id').value;if(id)payload.id=id;callServer_(id?'updateExpense':'createExpense',payload).then(function(r){unwrap_(r,'Expense');$('expense-dialog').close();toast_(id?'Expense updated.':'Expense recorded.');return refreshCurrent_();}).catch(function(error){showFormMessage_('expense-form-message',errorMessage_(error));}).then(function(){state.guards.expense=false;$('expense-submit').disabled=false;});});
+  $('expense-filters').addEventListener('submit',function(e){e.preventDefault();loadExpenses_();});$('expense-clear').addEventListener('click',function(){$('expense-filters').reset();$('expense-start').value='';$('expense-end').value='';loadExpenses_();});
+
+  initialise_();
+}());
+</script>
+
+

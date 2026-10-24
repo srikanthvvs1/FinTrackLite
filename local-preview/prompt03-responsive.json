@@ -1,0 +1,26 @@
+[
+  {
+    "client": 1425,
+    "scroll": 1425,
+    "table": "table",
+    "width": 1440
+  },
+  {
+    "client": 753,
+    "scroll": 753,
+    "table": "table",
+    "width": 768
+  },
+  {
+    "client": 375,
+    "scroll": 375,
+    "table": "block",
+    "width": 390
+  },
+  {
+    "client": 305,
+    "scroll": 305,
+    "table": "block",
+    "width": 320
+  }
+]

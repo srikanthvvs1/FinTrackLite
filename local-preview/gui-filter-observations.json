@@ -1,0 +1,106 @@
+[
+  {
+    "label": "month 01",
+    "summary": "Total expenses\n₹15,000\nFixed\n₹10,000\nVariable\n₹5,000\nTransactions\n2"
+  },
+  {
+    "label": "month 02",
+    "summary": "Total expenses\n₹18,000\nFixed\n₹10,000\nVariable\n₹8,000\nTransactions\n2"
+  },
+  {
+    "label": "month 03",
+    "summary": "Total expenses\n₹18,000\nFixed\n₹12,000\nVariable\n₹6,000\nTransactions\n2"
+  },
+  {
+    "label": "month 04",
+    "summary": "Total expenses\n₹14,000\nFixed\n₹10,000\nVariable\n₹4,000\nTransactions\n2"
+  },
+  {
+    "label": "month 05",
+    "summary": "Total expenses\n₹12,000\nFixed\n₹10,000\nVariable\n₹2,000\nTransactions\n2"
+  },
+  {
+    "label": "all five months",
+    "summary": "Total expenses\n₹77,000\nFixed\n₹52,000\nVariable\n₹25,000\nTransactions\n10"
+  },
+  {
+    "label": "category food",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category grocery",
+    "summary": "Total expenses\n₹13,000\nFixed\n₹0\nVariable\n₹13,000\nTransactions\n2"
+  },
+  {
+    "label": "category vegetables_fruits",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category travel",
+    "summary": "Total expenses\n₹4,000\nFixed\n₹0\nVariable\n₹4,000\nTransactions\n1"
+  },
+  {
+    "label": "category commute",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category housing",
+    "summary": "Total expenses\n₹52,000\nFixed\n₹52,000\nVariable\n₹0\nTransactions\n5"
+  },
+  {
+    "label": "category parents_fund",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category health",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category personal_care",
+    "summary": "Total expenses\n₹2,000\nFixed\n₹0\nVariable\n₹2,000\nTransactions\n1"
+  },
+  {
+    "label": "category subscriptions",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category entertainment",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category utilities",
+    "summary": "Total expenses\n₹6,000\nFixed\n₹0\nVariable\n₹6,000\nTransactions\n1"
+  },
+  {
+    "label": "category shopping",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category wife_expenses",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "category other",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "nature FIXED",
+    "summary": "Total expenses\n₹52,000\nFixed\n₹52,000\nVariable\n₹0\nTransactions\n5"
+  },
+  {
+    "label": "nature VARIABLE",
+    "summary": "Total expenses\n₹25,000\nFixed\n₹0\nVariable\n₹25,000\nTransactions\n5"
+  },
+  {
+    "label": "source Cash / Salary",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  },
+  {
+    "label": "source Expenses",
+    "summary": "Total expenses\n₹77,000\nFixed\n₹52,000\nVariable\n₹25,000\nTransactions\n10"
+  },
+  {
+    "label": "combined Housing Variable Expenses",
+    "summary": "Total expenses\n₹0\nFixed\n₹0\nVariable\n₹0\nTransactions\n0"
+  }
+]

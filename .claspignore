@@ -1,0 +1,18 @@
+# Development-only tests and artifacts
+TestHarness.gs
+local-preview/
+test-fixtures/
+screenshots/
+
+# Prompt packs and tools
+FinTrack_Lite_Reimplementation_Prompt_Pack/
+tools/
+**/tools/**
+
+# Local/editor metadata
+.git/
+.github/
+.vscode/
+.idea/
+node_modules/
+*.log

@@ -1,0 +1,87 @@
+{
+  "passed": 20,
+  "failed": 0,
+  "total": 20,
+  "results": [
+    {
+      "name": "first initialization",
+      "status": "PASS"
+    },
+    {
+      "name": "repeat initialization",
+      "status": "PASS"
+    },
+    {
+      "name": "exact seeded rows",
+      "status": "PASS"
+    },
+    {
+      "name": "exact six-sheet count",
+      "status": "PASS"
+    },
+    {
+      "name": "header mismatch failure",
+      "status": "PASS"
+    },
+    {
+      "name": "every account type can be created",
+      "status": "PASS"
+    },
+    {
+      "name": "opening balance creates no movement",
+      "status": "PASS"
+    },
+    {
+      "name": "income add withdraw move and expense balance math",
+      "status": "PASS"
+    },
+    {
+      "name": "moves are wealth-neutral",
+      "status": "PASS"
+    },
+    {
+      "name": "insufficient balance fails without write",
+      "status": "PASS"
+    },
+    {
+      "name": "inactive and deleted accounts are blocked",
+      "status": "PASS"
+    },
+    {
+      "name": "account edit archive and delete rules",
+      "status": "PASS"
+    },
+    {
+      "name": "movement edit and void recalculate",
+      "status": "PASS"
+    },
+    {
+      "name": "account activity read model",
+      "status": "PASS"
+    },
+    {
+      "name": "expense module",
+      "status": "PASS"
+    },
+    {
+      "name": "expense validation and rejected writes",
+      "status": "PASS"
+    },
+    {
+      "name": "five-month dashboard and chart reconciliation",
+      "status": "PASS"
+    },
+    {
+      "name": "allocation boundaries and historical balances",
+      "status": "PASS"
+    },
+    {
+      "name": "activity filters pagination and signed effects",
+      "status": "PASS"
+    },
+    {
+      "name": "report validation and single bulk reads",
+      "status": "PASS"
+    }
+  ]
+}

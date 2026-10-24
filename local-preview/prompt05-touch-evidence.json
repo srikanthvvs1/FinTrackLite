@@ -1,0 +1,537 @@
+{
+  "url": "http://127.0.0.1:4177",
+  "checks": [
+    {
+      "name": "layout viewport 390",
+      "observed": 390,
+      "expected": 390,
+      "status": "PASS"
+    },
+    {
+      "name": "one native dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard touch width 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard touch navigation 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses touch width 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses touch navigation 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "accounts touch width 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "accounts touch navigation 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations touch width 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations touch navigation 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity touch width 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity touch navigation 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "flow-chart tap tooltip 390 11",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard-spending-chart tap tooltip 390 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard-spending-chart tap tooltip 390 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 390 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 390 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 390 2",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 390 3",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense-chart tap tooltip 390 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense-chart tap tooltip 390 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "layout viewport 320",
+      "observed": 320,
+      "expected": 320,
+      "status": "PASS"
+    },
+    {
+      "name": "one native dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard touch width 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard touch navigation 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses touch width 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses touch navigation 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "accounts touch width 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "accounts touch navigation 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations touch width 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations touch navigation 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity touch width 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity touch navigation 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "flow-chart tap tooltip 320 11",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard-spending-chart tap tooltip 320 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard-spending-chart tap tooltip 320 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 320 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 320 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 320 2",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "group-chart tap tooltip 320 3",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense-chart tap tooltip 320 0",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense-chart tap tooltip 320 1",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "mobile browser errors",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    }
+  ],
+  "tooltips": [
+    {
+      "width": 390,
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "opacity": 0.64,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.7,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.715,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Expense"
+      ],
+      "body": [
+        "Expense: ₹58,000 / 13.71%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 2,
+      "opacity": 1,
+      "title": [
+        "Investments"
+      ],
+      "body": [
+        "Investments: ₹80,000 / 18.91%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 3,
+      "opacity": 1,
+      "title": [
+        "Funds"
+      ],
+      "body": [
+        "Funds: ₹20,000 / 4.73%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.71,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ]
+    },
+    {
+      "width": 390,
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "opacity": 0.64,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.7,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.71,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Expense"
+      ],
+      "body": [
+        "Expense: ₹58,000 / 13.71%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 2,
+      "opacity": 1,
+      "title": [
+        "Investments"
+      ],
+      "body": [
+        "Investments: ₹80,000 / 18.91%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 3,
+      "opacity": 1,
+      "title": [
+        "Funds"
+      ],
+      "body": [
+        "Funds: ₹20,000 / 4.73%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "opacity": 0.715,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ]
+    },
+    {
+      "width": 320,
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "opacity": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ]
+    }
+  ],
+  "screenshots": [
+    "screenshots/prompt05-touch-dashboard-390.png",
+    "screenshots/prompt05-touch-expenses-390.png",
+    "screenshots/prompt05-touch-accounts-390.png",
+    "screenshots/prompt05-touch-allocations-390.png",
+    "screenshots/prompt05-touch-activity-390.png",
+    "screenshots/prompt05-tap-flow-chart-11-390.png",
+    "screenshots/prompt05-tap-dashboard-spending-chart-0-390.png",
+    "screenshots/prompt05-tap-dashboard-spending-chart-1-390.png",
+    "screenshots/prompt05-tap-group-chart-0-390.png",
+    "screenshots/prompt05-tap-group-chart-1-390.png",
+    "screenshots/prompt05-tap-group-chart-2-390.png",
+    "screenshots/prompt05-tap-group-chart-3-390.png",
+    "screenshots/prompt05-tap-expense-chart-0-390.png",
+    "screenshots/prompt05-tap-expense-chart-1-390.png",
+    "screenshots/prompt05-touch-dashboard-320.png",
+    "screenshots/prompt05-touch-expenses-320.png",
+    "screenshots/prompt05-touch-accounts-320.png",
+    "screenshots/prompt05-touch-allocations-320.png",
+    "screenshots/prompt05-touch-activity-320.png",
+    "screenshots/prompt05-tap-flow-chart-11-320.png",
+    "screenshots/prompt05-tap-dashboard-spending-chart-0-320.png",
+    "screenshots/prompt05-tap-dashboard-spending-chart-1-320.png",
+    "screenshots/prompt05-tap-group-chart-0-320.png",
+    "screenshots/prompt05-tap-group-chart-1-320.png",
+    "screenshots/prompt05-tap-group-chart-2-320.png",
+    "screenshots/prompt05-tap-group-chart-3-320.png",
+    "screenshots/prompt05-tap-expense-chart-0-320.png",
+    "screenshots/prompt05-tap-expense-chart-1-320.png"
+  ],
+  "errors": [],
+  "status": "PASS"
+}

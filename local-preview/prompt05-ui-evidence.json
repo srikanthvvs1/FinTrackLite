@@ -1,0 +1,1534 @@
+{
+  "url": "http://127.0.0.1:4177",
+  "actions": [
+    {
+      "action": "Create account",
+      "name": "Prompt 5 01",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 02",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 03",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 04",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 05",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 06",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 07",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 08",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 09",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 10",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 11",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 12",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 13",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 14",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Prompt 5 15",
+      "group": "FUND"
+    },
+    {
+      "action": "Create account",
+      "name": "Delete candidate",
+      "group": "FUND"
+    },
+    {
+      "action": "Delete account",
+      "name": "Delete candidate"
+    }
+  ],
+  "checks": [
+    {
+      "name": "five-month fixture populated",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "accounts after tile stress",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete disabled nonzero 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete enabled zero 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account name associated label 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "chooser action count 1440",
+      "observed": 5,
+      "expected": 5,
+      "status": "PASS"
+    },
+    {
+      "name": "income shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "INCOME required date 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "add shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "ADD required date 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "WITHDRAW required date 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "move shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "MOVE required date 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move excludes source 1440",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "expense shared dialog 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense visible panel 1440",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense keyboard focus 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense dialog in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense primary action in viewport 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense category required 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "thirty investment and fund tiles 1440",
+      "observed": 31,
+      "expected": 31,
+      "status": "PASS"
+    },
+    {
+      "name": "tile grid no horizontal overflow 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "desktop account list scrolls 1440",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account selection keeps desktop scroll 1440",
+      "observed": {
+        "windowY": 0,
+        "listY": 706
+      },
+      "expected": {
+        "windowY": 0,
+        "listY": 706
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "delete disabled nonzero 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete enabled zero 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account name associated label 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "chooser action count 768",
+      "observed": 5,
+      "expected": 5,
+      "status": "PASS"
+    },
+    {
+      "name": "income shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "INCOME required date 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "add shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "ADD required date 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "WITHDRAW required date 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "move shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "MOVE required date 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move excludes source 768",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "expense shared dialog 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense visible panel 768",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense keyboard focus 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense dialog in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense primary action in viewport 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense category required 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "thirty investment and fund tiles 768",
+      "observed": 31,
+      "expected": 31,
+      "status": "PASS"
+    },
+    {
+      "name": "tile grid no horizontal overflow 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "desktop account list scrolls 768",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account selection keeps desktop scroll 768",
+      "observed": {
+        "windowY": 0,
+        "listY": 706
+      },
+      "expected": {
+        "windowY": 0,
+        "listY": 706
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "delete disabled nonzero 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete enabled zero 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account name associated label 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "chooser action count 390",
+      "observed": 5,
+      "expected": 5,
+      "status": "PASS"
+    },
+    {
+      "name": "income shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "INCOME required date 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "add shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "ADD required date 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "WITHDRAW required date 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "move shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "MOVE required date 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move excludes source 390",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "expense shared dialog 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense visible panel 390",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense keyboard focus 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense dialog in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense primary action in viewport 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense category required 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "thirty investment and fund tiles 390",
+      "observed": 31,
+      "expected": 31,
+      "status": "PASS"
+    },
+    {
+      "name": "tile grid no horizontal overflow 390",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense mobile cards 390",
+      "observed": "block",
+      "expected": "block",
+      "status": "PASS"
+    },
+    {
+      "name": "activity mobile cards 390",
+      "observed": "block",
+      "expected": "block",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile account list normal flow 390",
+      "observed": "static",
+      "expected": "static",
+      "status": "PASS"
+    },
+    {
+      "name": "delete disabled nonzero 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete enabled zero 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account-create primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account name associated label 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "quick-add-menu dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "chooser action count 320",
+      "observed": 5,
+      "expected": 5,
+      "status": "PASS"
+    },
+    {
+      "name": "income shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "income keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "income primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "INCOME required date 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "add shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "add keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "add primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "ADD required date 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "withdraw primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "WITHDRAW required date 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "move shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "move keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "MOVE required date 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "move excludes source 320",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "expense shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "expense keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense category required 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dialog closed",
+      "observed": false,
+      "expected": false,
+      "status": "PASS"
+    },
+    {
+      "name": "thirty investment and fund tiles 320",
+      "observed": 31,
+      "expected": 31,
+      "status": "PASS"
+    },
+    {
+      "name": "tile grid no horizontal overflow 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expense mobile cards 320",
+      "observed": "block",
+      "expected": "block",
+      "status": "PASS"
+    },
+    {
+      "name": "activity mobile cards 320",
+      "observed": "block",
+      "expected": "block",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile account list normal flow 320",
+      "observed": "static",
+      "expected": "static",
+      "status": "PASS"
+    },
+    {
+      "name": "delete-confirm shared dialog 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "delete-confirm visible panel 320",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "delete-confirm keyboard focus 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete-confirm dialog in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "delete-confirm primary action in viewport 320",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "deleted candidate hidden",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "deleted candidate retained in rows",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "tracked total after UI stress",
+      "observed": 423000,
+      "expected": 423000,
+      "status": "PASS"
+    },
+    {
+      "name": "page runtime errors",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "screenshots/prompt05-delete-disabled-1440.png",
+    "screenshots/prompt05-delete-enabled-1440.png",
+    "screenshots/prompt05-account-create-1440.png",
+    "screenshots/prompt05-quick-add-menu-1440.png",
+    "screenshots/prompt05-income-1440.png",
+    "screenshots/prompt05-add-1440.png",
+    "screenshots/prompt05-withdraw-1440.png",
+    "screenshots/prompt05-move-1440.png",
+    "screenshots/prompt05-expense-1440.png",
+    "screenshots/prompt05-thirty-tiles-1440.png",
+    "screenshots/prompt05-expense-cards-1440.png",
+    "screenshots/prompt05-activity-cards-1440.png",
+    "screenshots/prompt05-many-accounts-1440.png",
+    "screenshots/prompt05-delete-disabled-768.png",
+    "screenshots/prompt05-delete-enabled-768.png",
+    "screenshots/prompt05-account-create-768.png",
+    "screenshots/prompt05-quick-add-menu-768.png",
+    "screenshots/prompt05-income-768.png",
+    "screenshots/prompt05-add-768.png",
+    "screenshots/prompt05-withdraw-768.png",
+    "screenshots/prompt05-move-768.png",
+    "screenshots/prompt05-expense-768.png",
+    "screenshots/prompt05-thirty-tiles-768.png",
+    "screenshots/prompt05-expense-cards-768.png",
+    "screenshots/prompt05-activity-cards-768.png",
+    "screenshots/prompt05-many-accounts-768.png",
+    "screenshots/prompt05-delete-disabled-390.png",
+    "screenshots/prompt05-delete-enabled-390.png",
+    "screenshots/prompt05-account-create-390.png",
+    "screenshots/prompt05-quick-add-menu-390.png",
+    "screenshots/prompt05-income-390.png",
+    "screenshots/prompt05-add-390.png",
+    "screenshots/prompt05-withdraw-390.png",
+    "screenshots/prompt05-move-390.png",
+    "screenshots/prompt05-expense-390.png",
+    "screenshots/prompt05-thirty-tiles-390.png",
+    "screenshots/prompt05-expense-cards-390.png",
+    "screenshots/prompt05-activity-cards-390.png",
+    "screenshots/prompt05-many-accounts-390.png",
+    "screenshots/prompt05-delete-disabled-320.png",
+    "screenshots/prompt05-delete-enabled-320.png",
+    "screenshots/prompt05-account-create-320.png",
+    "screenshots/prompt05-quick-add-menu-320.png",
+    "screenshots/prompt05-income-320.png",
+    "screenshots/prompt05-add-320.png",
+    "screenshots/prompt05-withdraw-320.png",
+    "screenshots/prompt05-move-320.png",
+    "screenshots/prompt05-expense-320.png",
+    "screenshots/prompt05-thirty-tiles-320.png",
+    "screenshots/prompt05-expense-cards-320.png",
+    "screenshots/prompt05-activity-cards-320.png",
+    "screenshots/prompt05-many-accounts-320.png",
+    "screenshots/prompt05-delete-confirm-320.png"
+  ],
+  "errors": [],
+  "status": "PASS"
+}

@@ -1,11 +1,12 @@
 var FINTRACK_TEST_SPREADSHEET_ = null;
+var FINTRACK_SPREADSHEET_ = null;
 
 function getSpreadsheet_() {
-  var spreadsheet = FINTRACK_TEST_SPREADSHEET_ || SpreadsheetApp.getActiveSpreadsheet();
-  if (!spreadsheet) {
-    throw new Error('FinTrack Lite cannot access a bound spreadsheet. Open the script from a Google Spreadsheet and retry.');
+  if (FINTRACK_TEST_SPREADSHEET_) return FINTRACK_TEST_SPREADSHEET_;
+  if (!FINTRACK_SPREADSHEET_) {
+    FINTRACK_SPREADSHEET_ = SpreadsheetApp.openById(FINTRACK_CONFIG.SPREADSHEET_ID);
   }
-  return spreadsheet;
+  return FINTRACK_SPREADSHEET_;
 }
 
 function initializeFinTrackLite_() {

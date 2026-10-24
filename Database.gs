@@ -4,7 +4,11 @@ var FINTRACK_SPREADSHEET_ = null;
 function getSpreadsheet_() {
   if (FINTRACK_TEST_SPREADSHEET_) return FINTRACK_TEST_SPREADSHEET_;
   if (!FINTRACK_SPREADSHEET_) {
-    FINTRACK_SPREADSHEET_ = SpreadsheetApp.openById(FINTRACK_CONFIG.SPREADSHEET_ID);
+    var spreadsheetId = typeof FINTRACK_LOCAL_CONFIG !== 'undefined' && FINTRACK_LOCAL_CONFIG.SPREADSHEET_ID;
+    if (!spreadsheetId || spreadsheetId === 'YOUR_SPREADSHEET_ID') {
+      throw new Error('Missing spreadsheet configuration. Create PrivateConfig.gs from PrivateConfig.example.gs and push the project again.');
+    }
+    FINTRACK_SPREADSHEET_ = SpreadsheetApp.openById(spreadsheetId);
   }
   return FINTRACK_SPREADSHEET_;
 }

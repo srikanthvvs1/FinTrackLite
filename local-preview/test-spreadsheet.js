@@ -8,7 +8,7 @@ let opens = 0;
 const context = vm.createContext({ SpreadsheetApp: {
   getActiveSpreadsheet() { throw new Error('No active spreadsheet in web app'); },
   openById(id) {
-    assert.equal(id, '1bUFb3ka9uLYH8FJemY45vETZN_Pa-F86mxMAmSfWxyk');
+    assert.equal(id, 'test-spreadsheet-id');
     opens++;
     return spreadsheet;
   }
@@ -16,6 +16,10 @@ const context = vm.createContext({ SpreadsheetApp: {
 for (const file of ['Config.gs', 'Database.gs']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context);
 }
+assert.throws(() => context.getSpreadsheet_(), /Missing spreadsheet configuration/);
+context.FINTRACK_LOCAL_CONFIG = { SPREADSHEET_ID: 'YOUR_SPREADSHEET_ID' };
+assert.throws(() => context.getSpreadsheet_(), /Missing spreadsheet configuration/);
+context.FINTRACK_LOCAL_CONFIG = { SPREADSHEET_ID: 'test-spreadsheet-id' };
 assert.equal(context.getSpreadsheet_(), spreadsheet);
 assert.equal(context.getSpreadsheet_(), spreadsheet);
 assert.equal(opens, 1, 'Reuse the spreadsheet during one execution');

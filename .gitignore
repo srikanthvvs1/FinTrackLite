@@ -1,6 +1,10 @@
 node_modules/
 *.log
 .clasprc.json
+.clasp.json
+PrivateConfig.gs
+.deployment.local.json
+.private-history/
 .env
 .env.*
 !.env.example

@@ -1,6 +1,5 @@
 var FINTRACK_CONFIG = Object.freeze({
   APP_NAME: 'FinTrack',
-  SPREADSHEET_ID: '1bUFb3ka9uLYH8FJemY45vETZN_Pa-F86mxMAmSfWxyk',
   SCHEMA_VERSION: '1',
   SHEETS: Object.freeze({
     SETTINGS: 'Settings',

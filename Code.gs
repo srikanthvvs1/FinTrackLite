@@ -34,6 +34,14 @@ function getAccountsPageData(payload) {
   return readApi_(function () { return getAccountsPageData_(payload); });
 }
 
+function getDashboardData(payload) {
+  return readApi_(function () { return getDashboardData_(payload); });
+}
+
+function getActivityPage(payload) {
+  return readApi_(function () { return getActivityPage_(payload); });
+}
+
 function createAccount(payload) {
   return mutationApi_(function () { return createAccount_(payload || {}); });
 }

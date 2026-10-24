@@ -43,7 +43,7 @@ context.FINTRACK_TEST_SPREADSHEET_ = new context.MemorySpreadsheet_('FinTrack Li
 context.initializeFinTrackLite();
 
 function clientStub() {
-  const methods = ['initializeFinTrackLite', 'getBootstrapData', 'getAccountsPageData', 'createAccount', 'updateAccount', 'archiveAccount', 'deleteAccount', 'recordIncome', 'addToAccount', 'withdrawFromAccount', 'moveBetweenAccounts', 'updateMovement', 'voidMovement', 'createExpense', 'updateExpense', 'voidExpense', 'getExpenseReport', 'runAllTests'];
+  const methods = ['initializeFinTrackLite', 'getBootstrapData', 'getDashboardData', 'getActivityPage', 'getAccountsPageData', 'createAccount', 'updateAccount', 'archiveAccount', 'deleteAccount', 'recordIncome', 'addToAccount', 'withdrawFromAccount', 'moveBetweenAccounts', 'updateMovement', 'voidMovement', 'createExpense', 'updateExpense', 'voidExpense', 'getExpenseReport', 'runAllTests'];
   return `<script>(function(){function runner(){var success=function(){},failure=function(){};var api={withSuccessHandler:function(fn){success=fn;return api;},withFailureHandler:function(fn){failure=fn;return api;}};${methods.map((method) => `api.${method}=function(payload){fetch('/rpc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({method:'${method}',payload:payload})}).then(function(response){return response.json();}).then(function(result){if(result.error)throw new Error(result.error);success(result);}).catch(failure);};`).join('')}return api;}Object.defineProperty(window,'google',{value:{script:{get run(){return runner();}}}});}());</script>`;
 }
 
@@ -94,7 +94,7 @@ function json(response, status, value) {
   response.end(JSON.stringify(value));
 }
 
-if(require.main===module) server.listen(port, '127.0.0.1', () => console.log(`FinTrack Prompt 03 preview http://127.0.0.1:${port}`));
+if(require.main===module) server.listen(port, '127.0.0.1', () => console.log(`FinTrack Prompt 04 preview http://127.0.0.1:${port}`));
 
 
 module.exports={context,statePayload};

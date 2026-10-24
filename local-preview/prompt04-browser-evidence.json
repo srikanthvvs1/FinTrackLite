@@ -1,0 +1,3483 @@
+{
+  "url": "http://127.0.0.1:4176",
+  "fixedDate": "2026-05-31",
+  "actions": [
+    {
+      "action": "Create account",
+      "name": "Fixed Deposit",
+      "type": "FIXED_DEPOSIT",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Emergency",
+      "type": "EMERGENCY_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Travel",
+      "type": "TRAVEL_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Chit",
+      "type": "CHIT",
+      "group": ""
+    },
+    {
+      "action": "INCOME",
+      "date": "2026-01-15",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 100000,
+      "description": "Salary 1"
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-01-15",
+      "from": "Cash / Salary",
+      "to": "Expenses",
+      "amount": 30000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-01-15",
+      "from": "Cash / Salary",
+      "to": "Mutual Funds",
+      "amount": 20000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-01-15",
+      "from": "Cash / Salary",
+      "to": "Emergency",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-01-15",
+      "category": "housing",
+      "amount": 10000,
+      "description": "Monthly housing",
+      "account": "Expenses"
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-01-15",
+      "category": "grocery",
+      "amount": 5000,
+      "description": "Monthly grocery",
+      "account": "Expenses"
+    },
+    {
+      "action": "INCOME",
+      "date": "2026-02-15",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 100000,
+      "description": "Salary 2"
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-02-15",
+      "from": "Cash / Salary",
+      "to": "Expenses",
+      "amount": 30000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-02-15",
+      "from": "Cash / Salary",
+      "to": "Stocks",
+      "amount": 15000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-02-15",
+      "from": "Cash / Salary",
+      "to": "Travel",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-02-15",
+      "category": "housing",
+      "amount": 10000,
+      "description": "Monthly housing",
+      "account": "Expenses"
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-02-15",
+      "category": "grocery",
+      "amount": 8000,
+      "description": "Monthly grocery",
+      "account": "Expenses"
+    },
+    {
+      "action": "INCOME",
+      "date": "2026-03-15",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 100000,
+      "description": "Salary 3"
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-03-15",
+      "from": "Cash / Salary",
+      "to": "Expenses",
+      "amount": 30000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-03-15",
+      "from": "Cash / Salary",
+      "to": "PPF",
+      "amount": 10000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-03-15",
+      "from": "Cash / Salary",
+      "to": "NPS",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-03-15",
+      "from": "Cash / Salary",
+      "to": "Gold",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-03-15",
+      "from": "Cash / Salary",
+      "to": "Chit",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-03-15",
+      "category": "housing",
+      "amount": 12000,
+      "description": "Monthly housing",
+      "account": "Expenses"
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-03-15",
+      "category": "utilities",
+      "amount": 6000,
+      "description": "Monthly utilities",
+      "account": "Expenses"
+    },
+    {
+      "action": "INCOME",
+      "date": "2026-04-15",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 100000,
+      "description": "Salary 4"
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-04-15",
+      "from": "Cash / Salary",
+      "to": "Expenses",
+      "amount": 25000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-04-15",
+      "from": "Cash / Salary",
+      "to": "Fixed Deposit",
+      "amount": 15000,
+      "description": ""
+    },
+    {
+      "action": "ADD",
+      "date": "2026-04-15",
+      "from": "",
+      "to": "Emergency",
+      "amount": 1000,
+      "description": ""
+    },
+    {
+      "action": "WITHDRAW",
+      "date": "2026-04-15",
+      "from": "Travel",
+      "to": "",
+      "amount": 1000,
+      "description": ""
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-04-15",
+      "category": "housing",
+      "amount": 10000,
+      "description": "Monthly housing",
+      "account": "Expenses"
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-04-15",
+      "category": "travel",
+      "amount": 4000,
+      "description": "Monthly travel",
+      "account": "Expenses"
+    },
+    {
+      "action": "INCOME",
+      "date": "2026-05-15",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 100000,
+      "description": "Salary 5"
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-05-15",
+      "from": "Cash / Salary",
+      "to": "Expenses",
+      "amount": 20000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-05-15",
+      "from": "Cash / Salary",
+      "to": "Mutual Funds",
+      "amount": 10000,
+      "description": ""
+    },
+    {
+      "action": "MOVE",
+      "date": "2026-05-15",
+      "from": "Cash / Salary",
+      "to": "Chit",
+      "amount": 5000,
+      "description": ""
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-05-15",
+      "category": "housing",
+      "amount": 10000,
+      "description": "Monthly housing",
+      "account": "Expenses"
+    },
+    {
+      "action": "EXPENSE",
+      "date": "2026-05-15",
+      "category": "personal_care",
+      "amount": 2000,
+      "description": "Monthly personal_care",
+      "account": "Expenses"
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Cash / Salary",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Cash / Salary",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Expenses",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Expenses",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Mutual Funds",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Mutual Funds",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Stocks",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Stocks",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "PPF",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "PPF",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "NPS",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "NPS",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Gold",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Gold",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Fixed Deposit",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Fixed Deposit",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Emergency",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Emergency",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Travel",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Travel",
+      "amount": 100
+    },
+    {
+      "action": "Add amount",
+      "date": "2026-05-31",
+      "account": "Chit",
+      "amount": 100
+    },
+    {
+      "action": "Withdraw",
+      "date": "2026-05-31",
+      "account": "Chit",
+      "amount": 100
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Fixed Deposit",
+      "amount": 250,
+      "description": "Disposable void check"
+    },
+    {
+      "action": "Void",
+      "description": "Disposable void check",
+      "amount": 250
+    },
+    {
+      "action": "Create account",
+      "name": "Home",
+      "type": "HOME_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Vehicle",
+      "type": "VEHICLE_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Education",
+      "type": "EDUCATION_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Future Expense",
+      "type": "FUTURE_EXPENSE_FUND",
+      "group": ""
+    },
+    {
+      "action": "Create account",
+      "name": "Custom Investment",
+      "type": "CUSTOM",
+      "group": "INVESTMENT"
+    },
+    {
+      "action": "Create account",
+      "name": "Custom Fund",
+      "type": "CUSTOM",
+      "group": "FUND"
+    },
+    {
+      "action": "Edit expense and restore",
+      "description": "Monthly personal_care"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 10,
+      "description": "Editable movement"
+    },
+    {
+      "action": "Edit and void movement",
+      "amount": 20,
+      "description": "Editable movement"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 000"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 001"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 002"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 003"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 004"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 005"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 006"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 007"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 008"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 009"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 010"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 011"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 012"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 013"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 014"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 015"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 016"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 017"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 018"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 019"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 020"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 021"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 022"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 023"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 024"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 025"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 026"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 027"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 028"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 029"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 030"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 031"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 032"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 033"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 034"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 035"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 036"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 037"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 038"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 039"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 040"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 041"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 042"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 043"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 044"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 045"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 046"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 047"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 048"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 049"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 050"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 051"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 052"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 053"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 054"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 055"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 056"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 057"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 058"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 059"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 060"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 061"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 062"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 063"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 064"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 065"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 066"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 067"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 068"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 069"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 070"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 071"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 072"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 073"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 074"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 075"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 076"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 077"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 078"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 079"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 080"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 081"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 082"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 083"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 084"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 085"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 086"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 087"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 088"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 089"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 090"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 091"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 092"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 093"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 094"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 095"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 096"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 097"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 098"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 099"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 100"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 101"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 102"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 103"
+    },
+    {
+      "action": "ADD",
+      "date": "2026-05-31",
+      "from": "",
+      "to": "Cash / Salary",
+      "amount": 1,
+      "description": "Pagination probe 104"
+    },
+    {
+      "action": "WITHDRAW",
+      "date": "2026-05-31",
+      "from": "Cash / Salary",
+      "to": "",
+      "amount": 105,
+      "description": "Pagination offset"
+    }
+  ],
+  "checks": [
+    {
+      "name": "initial empty flow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "initial empty categories",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "initial empty groups",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "temporary FD addition",
+      "observed": 15250,
+      "expected": 15250,
+      "status": "PASS"
+    },
+    {
+      "name": "Cash / Salary balance",
+      "observed": 265000,
+      "expected": 265000,
+      "status": "PASS"
+    },
+    {
+      "name": "Expenses balance",
+      "observed": 58000,
+      "expected": 58000,
+      "status": "PASS"
+    },
+    {
+      "name": "Mutual Funds balance",
+      "observed": 30000,
+      "expected": 30000,
+      "status": "PASS"
+    },
+    {
+      "name": "Stocks balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "PPF balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "NPS balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Gold balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Fixed Deposit balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "Emergency balance",
+      "observed": 6000,
+      "expected": 6000,
+      "status": "PASS"
+    },
+    {
+      "name": "Travel balance",
+      "observed": 4000,
+      "expected": 4000,
+      "status": "PASS"
+    },
+    {
+      "name": "Chit balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "group totals",
+      "observed": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "expected": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "total tracked",
+      "observed": 423000,
+      "expected": 423000,
+      "status": "PASS"
+    },
+    {
+      "name": "all balances nonnegative",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "May visible cards",
+      "observed": [
+        "₹1,00,000",
+        "₹12,000",
+        "₹15,000",
+        "₹73,000"
+      ],
+      "expected": [
+        "₹1,00,000",
+        "₹12,000",
+        "₹15,000",
+        "₹73,000"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "monthly data",
+      "observed": [
+        [
+          100000,
+          15000,
+          25000,
+          60000
+        ],
+        [
+          100000,
+          18000,
+          20000,
+          62000
+        ],
+        [
+          100000,
+          18000,
+          25000,
+          57000
+        ],
+        [
+          100000,
+          14000,
+          15000,
+          71000
+        ],
+        [
+          100000,
+          12000,
+          15000,
+          73000
+        ]
+      ],
+      "expected": [
+        [
+          100000,
+          15000,
+          25000,
+          60000
+        ],
+        [
+          100000,
+          18000,
+          20000,
+          62000
+        ],
+        [
+          100000,
+          18000,
+          25000,
+          57000
+        ],
+        [
+          100000,
+          14000,
+          15000,
+          71000
+        ],
+        [
+          100000,
+          12000,
+          15000,
+          73000
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "flow dataset values",
+      "observed": [
+        [
+          100000,
+          100000,
+          100000,
+          100000,
+          100000
+        ],
+        [
+          15000,
+          18000,
+          18000,
+          14000,
+          12000
+        ],
+        [
+          25000,
+          20000,
+          25000,
+          15000,
+          15000
+        ],
+        [
+          60000,
+          62000,
+          57000,
+          71000,
+          73000
+        ]
+      ],
+      "expected": [
+        [
+          100000,
+          100000,
+          100000,
+          100000,
+          100000
+        ],
+        [
+          15000,
+          18000,
+          18000,
+          14000,
+          12000
+        ],
+        [
+          25000,
+          20000,
+          25000,
+          15000,
+          15000
+        ],
+        [
+          60000,
+          62000,
+          57000,
+          71000,
+          73000
+        ]
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "flow twelve chronological labels",
+      "observed": [
+        "Jun 25",
+        "Jul 25",
+        "Aug 25",
+        "Sep 25",
+        "Oct 25",
+        "Nov 25",
+        "Dec 25",
+        "Jan 26",
+        "Feb 26",
+        "Mar 26",
+        "Apr 26",
+        "May 26"
+      ],
+      "expected": [
+        "Jun 25",
+        "Jul 25",
+        "Aug 25",
+        "Sep 25",
+        "Oct 25",
+        "Nov 25",
+        "Dec 25",
+        "Jan 26",
+        "Feb 26",
+        "Mar 26",
+        "Apr 26",
+        "May 26"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "zero baseline",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rounded upper bound above largest value",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "INR y ticks",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "May spending slices",
+      "observed": [
+        10000,
+        2000
+      ],
+      "expected": [
+        10000,
+        2000
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "doughnut axes",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "group dataset",
+      "observed": [
+        265000,
+        58000,
+        80000,
+        20000
+      ],
+      "expected": [
+        265000,
+        58000,
+        80000,
+        20000
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "group axes",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "group sum",
+      "observed": 423000,
+      "expected": 423000,
+      "status": "PASS"
+    },
+    {
+      "name": "April visible cards",
+      "observed": [
+        "₹1,00,000",
+        "₹14,000",
+        "₹15,000",
+        "₹71,000"
+      ],
+      "expected": [
+        "₹1,00,000",
+        "₹14,000",
+        "₹15,000",
+        "₹71,000"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "zero month chart empty",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "all investment and fund tiles",
+      "observed": 15,
+      "expected": 15,
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Mutual Funds",
+      "observed": "Mutual Funds",
+      "expected": "Mutual Funds",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Mutual Funds",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Stocks",
+      "observed": "Stocks",
+      "expected": "Stocks",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Stocks",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route PPF",
+      "observed": "PPF",
+      "expected": "PPF",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus PPF",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route NPS",
+      "observed": "NPS",
+      "expected": "NPS",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus NPS",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Gold",
+      "observed": "Gold",
+      "expected": "Gold",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Gold",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Fixed Deposit",
+      "observed": "Fixed Deposit",
+      "expected": "Fixed Deposit",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Fixed Deposit",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Custom Investment",
+      "observed": "Custom Investment",
+      "expected": "Custom Investment",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Custom Investment",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Emergency",
+      "observed": "Emergency",
+      "expected": "Emergency",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Emergency",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Travel",
+      "observed": "Travel",
+      "expected": "Travel",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Travel",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Chit",
+      "observed": "Chit",
+      "expected": "Chit",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Chit",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Home",
+      "observed": "Home",
+      "expected": "Home",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Home",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Vehicle",
+      "observed": "Vehicle",
+      "expected": "Vehicle",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Vehicle",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Education",
+      "observed": "Education",
+      "expected": "Education",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Education",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Future Expense",
+      "observed": "Future Expense",
+      "expected": "Future Expense",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Future Expense",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "tile route Custom Fund",
+      "observed": "Custom Fund",
+      "expected": "Custom Fund",
+      "status": "PASS"
+    },
+    {
+      "name": "tile recent activity focus Custom Fund",
+      "observed": "recent-activity-title",
+      "expected": "recent-activity-title",
+      "status": "PASS"
+    },
+    {
+      "name": "newly created account appears in Activity filter",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "void status rows",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "void edit/void hidden",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "void amount effect",
+      "observed": "₹0 (recorded ₹250)",
+      "expected": "₹0 (recorded ₹250)",
+      "status": "PASS"
+    },
+    {
+      "name": "expense kind count",
+      "observed": 2,
+      "expected": 2,
+      "status": "PASS"
+    },
+    {
+      "name": "cash move signs",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "January filtered count",
+      "observed": 6,
+      "expected": 6,
+      "status": "PASS"
+    },
+    {
+      "name": "Income filter count",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "Added amount filter count",
+      "observed": 11,
+      "expected": 11,
+      "status": "PASS"
+    },
+    {
+      "name": "Withdrawn amount filter count",
+      "observed": 11,
+      "expected": 11,
+      "status": "PASS"
+    },
+    {
+      "name": "expense edit propagates balance",
+      "observed": 262500,
+      "expected": 262500,
+      "status": "PASS"
+    },
+    {
+      "name": "debounced case-insensitive search",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "search empty state",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Clear resets active current month",
+      "observed": "ACTIVE",
+      "expected": "ACTIVE",
+      "status": "PASS"
+    },
+    {
+      "name": "global movement edit refresh",
+      "observed": "+₹20",
+      "expected": "+₹20",
+      "status": "PASS"
+    },
+    {
+      "name": "first global page capped",
+      "observed": 100,
+      "expected": 100,
+      "status": "PASS"
+    },
+    {
+      "name": "Load older visible",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "pagination no duplicates",
+      "observed": 134,
+      "expected": 134,
+      "status": "PASS"
+    },
+    {
+      "name": "pagination adds rows",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Load older ends",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Cash / Salary balance",
+      "observed": 265000,
+      "expected": 265000,
+      "status": "PASS"
+    },
+    {
+      "name": "Expenses balance",
+      "observed": 58000,
+      "expected": 58000,
+      "status": "PASS"
+    },
+    {
+      "name": "Mutual Funds balance",
+      "observed": 30000,
+      "expected": 30000,
+      "status": "PASS"
+    },
+    {
+      "name": "Stocks balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "PPF balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "NPS balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Gold balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Fixed Deposit balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "Emergency balance",
+      "observed": 6000,
+      "expected": 6000,
+      "status": "PASS"
+    },
+    {
+      "name": "Travel balance",
+      "observed": 4000,
+      "expected": 4000,
+      "status": "PASS"
+    },
+    {
+      "name": "Chit balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "group totals",
+      "observed": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "expected": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "total tracked",
+      "observed": 423000,
+      "expected": 423000,
+      "status": "PASS"
+    },
+    {
+      "name": "all balances nonnegative",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account recent activity first page",
+      "observed": 100,
+      "expected": 100,
+      "status": "PASS"
+    },
+    {
+      "name": "account recent activity older control",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account recent activity pagination",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account nonzero Delete disabled",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account precise Delete message",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "account opening date and balance",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "archive retained-history confirmation",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "desktop list independently scrollable",
+      "observed": "auto",
+      "expected": "auto",
+      "status": "PASS"
+    },
+    {
+      "name": "Cash / Salary balance",
+      "observed": 265000,
+      "expected": 265000,
+      "status": "PASS"
+    },
+    {
+      "name": "Expenses balance",
+      "observed": 58000,
+      "expected": 58000,
+      "status": "PASS"
+    },
+    {
+      "name": "Mutual Funds balance",
+      "observed": 30000,
+      "expected": 30000,
+      "status": "PASS"
+    },
+    {
+      "name": "Stocks balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "PPF balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "NPS balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Gold balance",
+      "observed": 5000,
+      "expected": 5000,
+      "status": "PASS"
+    },
+    {
+      "name": "Fixed Deposit balance",
+      "observed": 15000,
+      "expected": 15000,
+      "status": "PASS"
+    },
+    {
+      "name": "Emergency balance",
+      "observed": 6000,
+      "expected": 6000,
+      "status": "PASS"
+    },
+    {
+      "name": "Travel balance",
+      "observed": 4000,
+      "expected": 4000,
+      "status": "PASS"
+    },
+    {
+      "name": "Chit balance",
+      "observed": 10000,
+      "expected": 10000,
+      "status": "PASS"
+    },
+    {
+      "name": "group totals",
+      "observed": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "expected": {
+        "CASH": 265000,
+        "EXPENSE": 58000,
+        "INVESTMENT": 80000,
+        "FUND": 20000
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "total tracked",
+      "observed": 423000,
+      "expected": 423000,
+      "status": "PASS"
+    },
+    {
+      "name": "all balances nonnegative",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard 1440 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses 1440 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "retained expense doughnut axes 1440",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "accounts 1440 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations 1440 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity 1440 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard 768 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses 768 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "retained expense doughnut axes 768",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "accounts 768 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations 768 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity 768 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard 390 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses 390 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "retained expense doughnut axes 390",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "accounts 390 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations 390 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity 390 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "dashboard 320 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "expenses 320 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "retained expense doughnut axes 320",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    },
+    {
+      "name": "accounts 320 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "allocations 320 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "activity 320 no horizontal overflow",
+      "observed": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "browser runtime errors",
+      "observed": [],
+      "expected": [],
+      "status": "PASS"
+    }
+  ],
+  "tooltips": [
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 7,
+      "title": [
+        "Jan 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹60,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹15,000",
+        "Net allocated: ₹25,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 8,
+      "title": [
+        "Feb 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹62,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹18,000",
+        "Net allocated: ₹20,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 9,
+      "title": [
+        "Mar 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹57,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹18,000",
+        "Net allocated: ₹25,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 10,
+      "title": [
+        "Apr 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹71,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹14,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Expense"
+      ],
+      "body": [
+        "Expense: ₹58,000 / 13.71%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 2,
+      "title": [
+        "Investments"
+      ],
+      "body": [
+        "Investments: ₹80,000 / 18.91%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 3,
+      "title": [
+        "Funds"
+      ],
+      "body": [
+        "Funds: ₹20,000 / 4.73%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "flow-chart",
+      "dataset": 0,
+      "index": 11,
+      "title": [
+        "May 26"
+      ],
+      "body": [
+        "Salary allocation remainder: ₹73,000",
+        "Income: ₹1,00,000",
+        "Expenses: ₹12,000",
+        "Net allocated: ₹15,000"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "dashboard-spending-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "group-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Cash"
+      ],
+      "body": [
+        "Cash: ₹2,65,000 / 62.65%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 0,
+      "title": [
+        "Housing"
+      ],
+      "body": [
+        "Housing: ₹10,000 / 83.33%"
+      ],
+      "opacity": 1
+    },
+    {
+      "chart": "expense-chart",
+      "dataset": 0,
+      "index": 1,
+      "title": [
+        "Personal Care"
+      ],
+      "body": [
+        "Personal Care: ₹2,000 / 16.67%"
+      ],
+      "opacity": 1
+    }
+  ],
+  "responsive": [
+    {
+      "view": "dashboard",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1440,
+      "scrollWidth": 1440,
+      "xTicks": [
+        "Jun 25",
+        "Jul 25",
+        "Aug 25",
+        "Sep 25",
+        "Oct 25",
+        "Nov 25",
+        "Dec 25",
+        "Jan 26",
+        "Feb 26",
+        "Mar 26",
+        "Apr 26",
+        "May 26"
+      ],
+      "yTicks": [
+        "₹0",
+        "₹20K",
+        "₹40K",
+        "₹60K",
+        "₹80K",
+        "₹1L",
+        "₹1.2L",
+        "₹1.4L",
+        "₹1.5L"
+      ]
+    },
+    {
+      "view": "expenses",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "view": "accounts",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "view": "allocations",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "view": "activity",
+      "width": 1440,
+      "height": 1000,
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "view": "dashboard",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "xTicks": [
+        "Jun 25",
+        "Aug 25",
+        "Oct 25",
+        "Dec 25",
+        "Feb 26",
+        "Apr 26"
+      ],
+      "yTicks": [
+        "₹0",
+        "₹20K",
+        "₹40K",
+        "₹60K",
+        "₹80K",
+        "₹1L",
+        "₹1.2L",
+        "₹1.4L",
+        "₹1.5L"
+      ]
+    },
+    {
+      "view": "expenses",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "view": "accounts",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "view": "allocations",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "view": "activity",
+      "width": 768,
+      "height": 1024,
+      "clientWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "view": "dashboard",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "xTicks": [
+        "Jun 25",
+        "Aug 25",
+        "Oct 25",
+        "Dec 25",
+        "Feb 26",
+        "Apr 26"
+      ],
+      "yTicks": [
+        "₹0",
+        "₹20K",
+        "₹40K",
+        "₹60K",
+        "₹80K",
+        "₹1L",
+        "₹1.2L",
+        "₹1.4L",
+        "₹1.5L"
+      ]
+    },
+    {
+      "view": "expenses",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "view": "accounts",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "view": "allocations",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "view": "activity",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "view": "dashboard",
+      "width": 320,
+      "height": 568,
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "xTicks": [
+        "Jun 25",
+        "Sep 25",
+        "Dec 25",
+        "Mar 26"
+      ],
+      "yTicks": [
+        "₹0",
+        "₹20K",
+        "₹40K",
+        "₹60K",
+        "₹80K",
+        "₹1L",
+        "₹1.2L",
+        "₹1.4L",
+        "₹1.5L"
+      ]
+    },
+    {
+      "view": "expenses",
+      "width": 320,
+      "height": 568,
+      "clientWidth": 320,
+      "scrollWidth": 320
+    },
+    {
+      "view": "accounts",
+      "width": 320,
+      "height": 568,
+      "clientWidth": 320,
+      "scrollWidth": 320
+    },
+    {
+      "view": "allocations",
+      "width": 320,
+      "height": 568,
+      "clientWidth": 320,
+      "scrollWidth": 320
+    },
+    {
+      "view": "activity",
+      "width": 320,
+      "height": 568,
+      "clientWidth": 320,
+      "scrollWidth": 320
+    }
+  ],
+  "screenshots": [
+    "screenshots/prompt04-empty-dashboard.png",
+    "screenshots/prompt04-void-confirmation.png",
+    "screenshots/prompt04-flow-tooltip-Jan-26.png",
+    "screenshots/prompt04-flow-tooltip-Feb-26.png",
+    "screenshots/prompt04-flow-tooltip-Mar-26.png",
+    "screenshots/prompt04-flow-tooltip-Apr-26.png",
+    "screenshots/prompt04-flow-tooltip-May-26.png",
+    "screenshots/prompt04-spending-tooltip-0.png",
+    "screenshots/prompt04-spending-tooltip-1.png",
+    "screenshots/prompt04-group-tooltip-0.png",
+    "screenshots/prompt04-group-tooltip-1.png",
+    "screenshots/prompt04-group-tooltip-2.png",
+    "screenshots/prompt04-group-tooltip-3.png",
+    "screenshots/prompt04-empty-selected-month.png",
+    "screenshots/prompt04-activity-void.png",
+    "screenshots/prompt04-dashboard-1440.png",
+    "screenshots/prompt04-flow-tooltip-May-1440.png",
+    "screenshots/prompt04-spending-tooltip-1440.png",
+    "screenshots/prompt04-group-tooltip-1440.png",
+    "screenshots/prompt04-expenses-1440.png",
+    "screenshots/prompt04-expense-tooltip-housing-1440.png",
+    "screenshots/prompt04-expense-tooltip-personal-1440.png",
+    "screenshots/prompt04-expense-list-1440.png",
+    "screenshots/prompt04-accounts-1440.png",
+    "screenshots/prompt04-account-detail-1440.png",
+    "screenshots/prompt04-allocations-1440.png",
+    "screenshots/prompt04-activity-1440.png",
+    "screenshots/prompt04-activity-list-1440.png",
+    "screenshots/prompt04-dashboard-768.png",
+    "screenshots/prompt04-flow-tooltip-May-768.png",
+    "screenshots/prompt04-spending-tooltip-768.png",
+    "screenshots/prompt04-group-tooltip-768.png",
+    "screenshots/prompt04-expenses-768.png",
+    "screenshots/prompt04-expense-tooltip-housing-768.png",
+    "screenshots/prompt04-expense-tooltip-personal-768.png",
+    "screenshots/prompt04-expense-list-768.png",
+    "screenshots/prompt04-accounts-768.png",
+    "screenshots/prompt04-account-detail-768.png",
+    "screenshots/prompt04-allocations-768.png",
+    "screenshots/prompt04-activity-768.png",
+    "screenshots/prompt04-activity-list-768.png",
+    "screenshots/prompt04-dashboard-390.png",
+    "screenshots/prompt04-flow-tooltip-May-390.png",
+    "screenshots/prompt04-spending-tooltip-390.png",
+    "screenshots/prompt04-group-tooltip-390.png",
+    "screenshots/prompt04-expenses-390.png",
+    "screenshots/prompt04-expense-tooltip-housing-390.png",
+    "screenshots/prompt04-expense-tooltip-personal-390.png",
+    "screenshots/prompt04-expense-list-390.png",
+    "screenshots/prompt04-accounts-390.png",
+    "screenshots/prompt04-account-detail-390.png",
+    "screenshots/prompt04-allocations-390.png",
+    "screenshots/prompt04-activity-390.png",
+    "screenshots/prompt04-activity-list-390.png",
+    "screenshots/prompt04-dashboard-320.png",
+    "screenshots/prompt04-flow-tooltip-May-320.png",
+    "screenshots/prompt04-spending-tooltip-320.png",
+    "screenshots/prompt04-group-tooltip-320.png",
+    "screenshots/prompt04-expenses-320.png",
+    "screenshots/prompt04-expense-tooltip-housing-320.png",
+    "screenshots/prompt04-expense-tooltip-personal-320.png",
+    "screenshots/prompt04-expense-list-320.png",
+    "screenshots/prompt04-accounts-320.png",
+    "screenshots/prompt04-account-detail-320.png",
+    "screenshots/prompt04-allocations-320.png",
+    "screenshots/prompt04-activity-320.png",
+    "screenshots/prompt04-activity-list-320.png"
+  ],
+  "errors": [],
+  "dashboard": {
+    "month": "2026-05",
+    "today": "2026-05-31",
+    "cards": [
+      {
+        "label": "Income",
+        "value": 100000
+      },
+      {
+        "label": "Expenses",
+        "value": 12000
+      },
+      {
+        "label": "Net allocated to investments & funds",
+        "value": 15000
+      },
+      {
+        "label": "Salary allocation remainder",
+        "value": 73000
+      }
+    ],
+    "monthlyFlow": [
+      {
+        "month": "2025-06",
+        "label": "Jun 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-07",
+        "label": "Jul 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-08",
+        "label": "Aug 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-09",
+        "label": "Sep 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-10",
+        "label": "Oct 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-11",
+        "label": "Nov 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2025-12",
+        "label": "Dec 25",
+        "income": 0,
+        "expenses": 0,
+        "netAllocated": 0,
+        "remainder": 0
+      },
+      {
+        "month": "2026-01",
+        "label": "Jan 26",
+        "income": 100000,
+        "expenses": 15000,
+        "netAllocated": 25000,
+        "remainder": 60000
+      },
+      {
+        "month": "2026-02",
+        "label": "Feb 26",
+        "income": 100000,
+        "expenses": 18000,
+        "netAllocated": 20000,
+        "remainder": 62000
+      },
+      {
+        "month": "2026-03",
+        "label": "Mar 26",
+        "income": 100000,
+        "expenses": 18000,
+        "netAllocated": 25000,
+        "remainder": 57000
+      },
+      {
+        "month": "2026-04",
+        "label": "Apr 26",
+        "income": 100000,
+        "expenses": 14000,
+        "netAllocated": 15000,
+        "remainder": 71000
+      },
+      {
+        "month": "2026-05",
+        "label": "May 26",
+        "income": 100000,
+        "expenses": 12000,
+        "netAllocated": 15000,
+        "remainder": 73000
+      }
+    ],
+    "categoryTotals": [
+      {
+        "code": "food",
+        "label": "Food & Takeaway",
+        "total": 0
+      },
+      {
+        "code": "grocery",
+        "label": "Grocery",
+        "total": 0
+      },
+      {
+        "code": "vegetables_fruits",
+        "label": "Vegetables & Fruits",
+        "total": 0
+      },
+      {
+        "code": "travel",
+        "label": "Travel",
+        "total": 0
+      },
+      {
+        "code": "commute",
+        "label": "Commute",
+        "total": 0
+      },
+      {
+        "code": "housing",
+        "label": "Housing",
+        "total": 10000
+      },
+      {
+        "code": "parents_fund",
+        "label": "Parents Fund",
+        "total": 0
+      },
+      {
+        "code": "health",
+        "label": "Health",
+        "total": 0
+      },
+      {
+        "code": "personal_care",
+        "label": "Personal Care",
+        "total": 2000
+      },
+      {
+        "code": "subscriptions",
+        "label": "Subscriptions & Software",
+        "total": 0
+      },
+      {
+        "code": "entertainment",
+        "label": "Entertainment",
+        "total": 0
+      },
+      {
+        "code": "utilities",
+        "label": "Utilities",
+        "total": 0
+      },
+      {
+        "code": "shopping",
+        "label": "Shopping",
+        "total": 0
+      },
+      {
+        "code": "wife_expenses",
+        "label": "Wife Expenses",
+        "total": 0
+      },
+      {
+        "code": "other",
+        "label": "Other",
+        "total": 0
+      }
+    ],
+    "totalsByGroup": {
+      "CASH": 265000,
+      "EXPENSE": 58000,
+      "INVESTMENT": 80000,
+      "FUND": 20000
+    },
+    "totalTrackedBalance": 423000,
+    "accounts": [
+      {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "name": "Cash / Salary",
+        "accountType": "CASH",
+        "accountGroup": "CASH",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 265000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000002",
+        "name": "Expenses",
+        "accountType": "EXPENSE",
+        "accountGroup": "EXPENSE",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 58000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "name": "Mutual Funds",
+        "accountType": "MUTUAL_FUND",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 30000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000004",
+        "name": "Stocks",
+        "accountType": "STOCK",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 15000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000005",
+        "name": "PPF",
+        "accountType": "PPF",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 10000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000006",
+        "name": "NPS",
+        "accountType": "NPS",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 5000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000007",
+        "name": "Gold",
+        "accountType": "GOLD",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-05-31",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 5000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000008",
+        "name": "Fixed Deposit",
+        "accountType": "FIXED_DEPOSIT",
+        "accountGroup": "INVESTMENT",
+        "openingDate": "2026-01-01",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 15000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000010",
+        "name": "Emergency",
+        "accountType": "EMERGENCY_FUND",
+        "accountGroup": "FUND",
+        "openingDate": "2026-01-01",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 6000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000012",
+        "name": "Travel",
+        "accountType": "TRAVEL_FUND",
+        "accountGroup": "FUND",
+        "openingDate": "2026-01-01",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 4000
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000014",
+        "name": "Chit",
+        "accountType": "CHIT",
+        "accountGroup": "FUND",
+        "openingDate": "2026-01-01",
+        "openingBalance": 0,
+        "active": true,
+        "deletedAt": "",
+        "notes": "",
+        "createdAt": "2026-05-31T12:00:00.000Z",
+        "updatedAt": "2026-05-31T12:00:00.000Z",
+        "balance": 10000
+      }
+    ]
+  },
+  "pagination": {
+    "first": 100,
+    "total": 134
+  },
+  "status": "PASS",
+  "resolvedValidationIssues": [
+    {
+      "issue": "Mobile expense tooltip pointer landed behind fixed bottom navigation",
+      "resolution": "Center the real chart within the unobscured viewport before mouse hover; repeat all widths and all visible charts",
+      "applicationDefect": false
+    }
+  ]
+}

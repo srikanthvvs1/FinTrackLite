@@ -1,0 +1,376 @@
+{
+  "descriptionDebounce": {
+    "requests": 1,
+    "elapsedMs": 341,
+    "minimumMs": 300,
+    "status": "PASS"
+  },
+  "accountSelection": {
+    "beforeScrollY": 250,
+    "afterScrollY": 250,
+    "status": "PASS"
+  },
+  "tileRoutes": [
+    {
+      "width": 1440,
+      "name": "Mutual Funds",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Stocks",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "PPF",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "NPS",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Gold",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Fixed Deposit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Custom Investment",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Emergency",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Travel",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Chit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Home",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Vehicle",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Education",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Future Expense",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "name": "Custom Fund",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Mutual Funds",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Stocks",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "PPF",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "NPS",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Gold",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Fixed Deposit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Custom Investment",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Emergency",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Travel",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Chit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Home",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Vehicle",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Education",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Future Expense",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Custom Fund",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Mutual Funds",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Stocks",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "PPF",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "NPS",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Gold",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Fixed Deposit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Custom Investment",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Emergency",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Travel",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Chit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Home",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Vehicle",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Education",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Future Expense",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Custom Fund",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Mutual Funds",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Stocks",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "PPF",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "NPS",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Gold",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Fixed Deposit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Custom Investment",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Emergency",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Travel",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Chit",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Home",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Vehicle",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Education",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Future Expense",
+      "visibleFocus": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Custom Fund",
+      "visibleFocus": true,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

@@ -7,7 +7,7 @@ FinTrack Lite is a Google Apps Script HTML Service application backed by one Goo
 1. Create a new Google Spreadsheet for FinTrack Lite. Do not reuse or replace an existing finance database.
 2. Copy PrivateConfig.example.gs to PrivateConfig.gs and replace YOUR_SPREADSHEET_ID locally. Copy .clasp.example.json to .clasp.json and replace YOUR_APPS_SCRIPT_PROJECT_ID locally. Push the project files to Apps Script. The deployment owner must have edit access to the spreadsheet.
 3. Run `initializeFinTrackLite()` once from the Apps Script editor and authorize access when prompted.
-4. Run `runAllTests()` in a development copy. A passing result reports 16 passed, 0 failed.
+4. Run `runAllTests()` in a development copy. A passing result reports 20 passed, 0 failed.
 5. Deploy as a web app only when you explicitly intend to publish a test or production deployment.
 
 Initialization is idempotent. It creates only missing Lite sheets, validates all existing Lite headers exactly, freezes each header row, and inserts only missing settings, starter accounts, and expense categories. It never deletes, renames, or resets a sheet.
@@ -30,3 +30,9 @@ Real IDs must never be committed. Git tracks only these templates:
 The destination files are ignored by Git. Keep them locally. PrivateConfig.gs is uploaded to Apps Script so the deployed app can access its spreadsheet; example files are excluded from Apps Script uploads. Never force-add ignored configuration files to Git.
 
 After a source change, run clasp push --force, then update the existing deployment using its ID from .deployment.local.json. Recreate the local configuration from the templates when setting up another checkout.
+
+## Prompt 04 local validation
+
+Run `node local-preview/test.js` (20 suites) and `node local-preview/test-spreadsheet.js`. Start a fresh isolated preview with FINTRACK_PREVIEW_PORT set to an unused port, then run `node local-preview/validate04.js` with FINTRACK_PREVIEW_URL pointing to that preview. The browser script uses bundled Playwright and Microsoft Edge; FINTRACK_NODE_MODULES may override its package lookup path. Never run the GUI stimulus against a real finance spreadsheet.
+
+See `local-preview/PROMPT04_VALIDATION.md` for the five-month GUI stimulus, exact reconciliations, tooltip/axis inspection, responsive screenshots, and scope boundaries.

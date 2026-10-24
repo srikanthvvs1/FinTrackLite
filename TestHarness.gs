@@ -16,7 +16,11 @@ function runAllTests() {
     ['movement edit and void recalculate', testMovementEditAndVoid_],
     ['account activity read model', testAccountActivityReadModel_],
     ['expense module', testExpenseModule_],
-    ['expense validation and rejected writes', testExpenseValidation_]
+    ['expense validation and rejected writes', testExpenseValidation_],
+    ['five-month dashboard and chart reconciliation', testFiveMonthReports_],
+    ['allocation boundaries and historical balances', testAllocationBoundaries_],
+    ['activity filters pagination and signed effects', testGlobalActivity_],
+    ['report validation and single bulk reads', testReportContracts_]
   ];
   tests.forEach(function (test) {
     try {
@@ -384,3 +388,81 @@ function testExpenseValidation_() {
   assertEqual_(2,readRows_('AuditLog').filter(function(r){return r.entityType==='EXPENSE';}).length,'only create and void success audits');
 }
 
+
+function fiveMonthScenarioForTest_() {
+  initializeTestSpreadsheet_('Prompt 04 five months');
+  [['Fixed Deposit','FIXED_DEPOSIT'],['Emergency','EMERGENCY_FUND'],['Travel','TRAVEL_FUND'],['Chit','CHIT']].forEach(function(pair){createAccount_({name:pair[0],accountType:pair[1],openingDate:'2026-01-01',openingBalance:0});});
+  var byName={};readRows_('Accounts').forEach(function(a){byName[a.name]=a;});
+  function movement(type,date,from,to,amount,description){return createMovement_(type,{date:date,fromAccountId:from?byName[from].id:'',toAccountId:to?byName[to].id:'',amount:amount,description:description||''});}
+  var schedules=[
+    {moves:[['Expenses',30000],['Mutual Funds',20000],['Emergency',5000]],expenses:[['housing',10000],['grocery',5000]]},
+    {moves:[['Expenses',30000],['Stocks',15000],['Travel',5000]],expenses:[['housing',10000],['grocery',8000]]},
+    {moves:[['Expenses',30000],['PPF',10000],['NPS',5000],['Gold',5000],['Chit',5000]],expenses:[['housing',12000],['utilities',6000]]},
+    {moves:[['Expenses',25000],['Fixed Deposit',15000]],expenses:[['housing',10000],['travel',4000]]},
+    {moves:[['Expenses',20000],['Mutual Funds',10000],['Chit',5000]],expenses:[['housing',10000],['personal_care',2000]]}
+  ];
+  schedules.forEach(function(schedule,i){var date='2026-0'+(i+1)+'-15';movement('INCOME',date,'','Cash / Salary',60000,'Salary first');movement('INCOME',date,'','Cash / Salary',40000,'Salary second');schedule.moves.forEach(function(pair){movement('MOVE',date,'Cash / Salary',pair[0],pair[1]);});schedule.expenses.forEach(function(pair){createExpense_({date:date,accountId:byName.Expenses.id,amount:pair[1],expenseCategory:pair[0],expenseNature:pair[0]==='housing'?'FIXED':'VARIABLE',description:'Monthly '+pair[0]});});if(i===3){movement('ADD',date,'','Emergency',1000);movement('WITHDRAW',date,'Travel','',1000);}});
+  Object.keys(byName).forEach(function(name){movement('ADD','2026-05-31','',name,100);movement('WITHDRAW','2026-05-31',name,'',100);});
+  var disposable=movement('ADD','2026-05-31','','Fixed Deposit',250,'Disposable void check');voidMovement_({id:disposable.id});
+  return byName;
+}
+
+function testFiveMonthReports_() {
+  var accounts=fiveMonthScenarioForTest_();
+  var expected={'Cash / Salary':265000,Expenses:58000,'Mutual Funds':30000,Stocks:15000,PPF:10000,NPS:5000,Gold:5000,'Fixed Deposit':15000,Emergency:6000,Travel:4000,Chit:10000};
+  var balances=currentBalancesForTest_();Object.keys(expected).forEach(function(name){assertEqual_(expected[name],balances.byAccountId[accounts[name].id],name+' reconciled');});
+  var dashboard=getDashboardData_({month:'2026-05'});
+  assertArrayEqual_([100000,12000,15000,73000],dashboard.cards.map(function(c){return c.value;}),'May cards');
+  assertArrayEqual_(['Income','Expenses','Net allocated to investments & funds','Salary allocation remainder'],dashboard.cards.map(function(c){return c.label;}),'card labels');
+  assertEqual_(12,dashboard.monthlyFlow.length,'12 calendar months');assertEqual_('2025-06',dashboard.monthlyFlow[0].month,'window begins June');
+  var monthly=[[100000,15000,25000,60000],[100000,18000,20000,62000],[100000,18000,25000,57000],[100000,14000,15000,71000],[100000,12000,15000,73000]];
+  dashboard.monthlyFlow.slice(7).forEach(function(row,i){assertArrayEqual_(monthly[i],[row.income,row.expenses,row.netAllocated,row.remainder],row.month+' chart values');});
+  dashboard.monthlyFlow.slice(0,7).forEach(function(row){assertArrayEqual_([0,0,0,0],[row.income,row.expenses,row.netAllocated,row.remainder],'zero month');});
+  assertArrayEqual_([265000,58000,80000,20000],['CASH','EXPENSE','INVESTMENT','FUND'].map(function(g){return dashboard.totalsByGroup[g];}),'group chart totals');assertEqual_(423000,dashboard.totalTrackedBalance,'total tracked');
+  assertArrayEqual_([10000,2000],dashboard.categoryTotals.filter(function(c){return c.total;}).map(function(c){return c.total;}),'May category chart');
+  assertEqual_(77000,getExpenseReport_({startDate:'2026-01-01',endDate:'2026-05-31'}).total,'retained expense report');
+  assertEqual_(11,dashboard.accounts.length,'one balance per account');
+  assertEqual_(false,/Net Worth|Current Value|NAV|Unrealized|Cost Basis|Holdings|Portfolio/i.test(JSON.stringify(dashboard)),'no forbidden chart labels');
+}
+
+function testAllocationBoundaries_() {
+  initializeTestSpreadsheet_('Allocation boundaries');
+  var cash=accountByNameForTest_('Cash / Salary'),mf=accountByNameForTest_('Mutual Funds'),gold=accountByNameForTest_('Gold');
+  var fund=createAccount_({name:'Opening fund',accountType:'CHIT',openingDate:'2026-01-01',openingBalance:500});
+  recordIncome_({date:'2026-05-01',toAccountId:cash.id,amount:1000});
+  moveBetweenAccounts_({date:'2026-05-02',fromAccountId:cash.id,toAccountId:mf.id,amount:400});
+  moveBetweenAccounts_({date:'2026-05-03',fromAccountId:mf.id,toAccountId:fund.id,amount:100});
+  moveBetweenAccounts_({date:'2026-05-04',fromAccountId:fund.id,toAccountId:cash.id,amount:150});
+  addToAccount_({date:'2026-05-05',toAccountId:gold.id,amount:20});withdrawFromAccount_({date:'2026-05-05',fromAccountId:gold.id,amount:20});
+  archiveAccount_({id:mf.id});deleteAccount_({id:gold.id});
+  var dashboard=getDashboardData_({month:'2026-05'});assertEqual_(250,dashboard.cards[2].value,'internal moves cancel and outward moves subtract');assertEqual_(750,dashboard.cards[3].value,'external add/withdraw excluded');assertEqual_(1500,dashboard.totalTrackedBalance,'opening included only in balances');
+  assertEqual_(true,dashboard.accounts.some(function(a){return a.id===mf.id;}),'archived retained');assertEqual_(false,dashboard.accounts.some(function(a){return a.id===gold.id;}),'deleted hidden');
+  var april=getDashboardData_({month:'2026-04'});assertArrayEqual_([0,0,0,0],april.cards.map(function(c){return c.value;}),'opening not monthly income');assertEqual_(1500,april.totalTrackedBalance,'balances current regardless of month');
+  moveBetweenAccounts_({date:'2026-05-06',fromAccountId:fund.id,toAccountId:cash.id,amount:100});
+  assertEqual_(150,getDashboardData_({month:'2026-05'}).cards[2].value,'live report after write');
+}
+
+function testGlobalActivity_() {
+  var accounts=fiveMonthScenarioForTest_(), all=getActivityPage_({startDate:'2026-01-01',endDate:'2026-05-31',status:'ALL'});
+  assertEqual_(61,all.totalCount,'combined rows including void');
+  var voids=getActivityPage_({status:'VOID'});assertEqual_(1,voids.rows.length,'void filter');assertEqual_(0,voids.rows[0].signedAmount,'void zero effect');assertEqual_(250,Number(voids.rows[0].amount),'void original amount');
+  var search=getActivityPage_({status:'ALL',search:'DISPOSABLE'});assertEqual_(1,search.rows.length,'case-insensitive description search');
+  assertEqual_(0,getActivityPage_({search:'unmatched'}).rows.length,'empty search');
+  var expense=getActivityPage_({kind:'EXPENSE'});assertEqual_(2,expense.rows.length,'May expenses');assertEqual_(true,expense.rows.every(function(r){return r.signedAmount<0&&r.expenseCategory;}),'expenses include edit fields');
+  var selected=getActivityPage_({kind:'MOVE',accountId:accounts['Mutual Funds'].id});assertEqual_(10000,selected.rows[0].signedAmount,'selected move-in positive');
+  var cash=getActivityPage_({kind:'MOVE',accountId:accounts['Cash / Salary'].id});assertEqual_(true,cash.rows.every(function(r){return r.signedAmount<0;}),'selected move-out negative');
+  var transfers=getActivityPage_({kind:'MOVE'});assertEqual_(true,transfers.rows.every(function(r){return r.signedAmount===0;}),'global moves net zero');
+  for(var i=0;i<115;i++)addToAccount_({date:'2026-05-31',toAccountId:accounts['Cash / Salary'].id,amount:1,description:'Pagination '+i});
+  var first=getActivityPage_({kind:'ADD'}),second=getActivityPage_({kind:'ADD',cursor:first.nextCursor});assertEqual_(100,first.rows.length,'page capped at 100');assertEqual_(true,first.hasMore,'has older');assertEqual_(false,second.hasMore,'last page');assertEqual_(126,first.rows.length+second.rows.length,'no pagination skips');
+  var rows=first.rows.concat(second.rows),ids={};rows.forEach(function(r,index){assertEqual_(false,!!ids[r.id],'no duplicate ID');ids[r.id]=true;if(index)assertEqual_(true,rows[index-1].cursor.localeCompare(r.cursor)>0,'stable newest-first tie order');});
+}
+
+function testReportContracts_() {
+  initializeTestSpreadsheet_('Report contracts');
+  [['month','2026-13'],['month','2026-5'],['month','2099-01']].forEach(function(pair){var p={};p[pair[0]]=pair[1];assertThrows_(function(){getDashboardData_(p);},'Month','invalid month');});
+  assertThrows_(function(){getDashboardData_({balance:1});},'cannot change','unknown dashboard field');
+  [{kind:'BOGUS'},{status:'BOGUS'},{cursor:'broken'},{startDate:'2026-05-10',endDate:'2026-05-01'},{accountId:'missing'}].forEach(function(p){var threw=false;try{getActivityPage_(p);}catch(e){threw=true;}assertEqual_(true,threw,'invalid activity request');});
+  assertEqual_(todayIso_().slice(0,7),getDashboardData_().month,'default current month');assertEqual_('ACTIVE',getActivityPage_().filters.status,'default active');
+  var original=readRows_,counts={};
+  try{readRows_=function(name){counts[name]=(counts[name]||0)+1;return original(name);};getDashboardData_({month:'2026-05'});['Accounts','Movements','Expenses','ExpenseCategories'].forEach(function(name){assertEqual_(1,counts[name],name+' read once');});counts={};getActivityPage_();['Accounts','Movements','Expenses'].forEach(function(name){assertEqual_(1,counts[name],name+' activity read once');});}finally{readRows_=original;}
+}

@@ -26,7 +26,11 @@ function requirePositiveAmount_(value) {
   if (!isFinite(amount) || amount <= 0) {
     throw new Error('Amount must be a finite number greater than 0.');
   }
-  return Math.round((amount + Number.EPSILON) * 100) / 100;
+  var rounded = Math.round((amount + Number.EPSILON) * 100) / 100;
+  if (rounded <= 0) {
+    throw new Error('Amount must round to at least 0.01.');
+  }
+  return rounded;
 }
 
 function requireIsoDateNotFuture_(value) {

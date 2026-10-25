@@ -8,7 +8,10 @@
   <body>
     <header class="top-header">
       <a class="brand" href="#" aria-label="FinTrack home"><span class="brand-mark" aria-hidden="true">F</span><span>FinTrack</span></a>
-      <button id="quick-add-button" class="button button-primary" type="button" disabled>+ Add Entry</button>
+      <div class="header-actions">
+        <button id="quick-expense-button" class="button button-primary" type="button" disabled>+ Quick expense</button>
+        <button id="quick-add-button" class="button button-secondary" type="button" disabled>Add entry</button>
+      </div>
     </header>
     <div class="app-layout">
       <nav class="primary-nav" aria-label="Primary navigation">
@@ -37,7 +40,7 @@
           <section class="expense-list-panel"><h2>Recent changes</h2><p id="global-count" class="muted" role="status"></p><div id="global-list" class="global-table-wrap"></div><button id="global-more" class="button button-secondary" type="button" hidden>Load older</button></section>
         </section>
         <section id="accounts-view" hidden aria-labelledby="accounts-title">
-          <div class="view-title-row"><div><p class="eyebrow">BUCKETS</p><h1 id="accounts-title" class="view-heading">Accounts</h1><p class="view-copy">Add, move, or withdraw money without account reconciliation.</p></div><button id="create-account-button" class="button button-secondary" type="button">Create account</button></div>
+          <div class="view-title-row"><div><p class="eyebrow">BUCKETS</p><h1 id="accounts-title" class="view-heading">Accounts</h1><p class="view-copy">See each balance and record money actions.</p></div><button id="create-account-button" class="button button-secondary" type="button">Create account</button></div>
           <div id="account-summary" class="expense-summary-grid"></div>
           <div class="account-controls"><label class="check-field"><input id="include-archived" type="checkbox"> Include archived</label><div class="date-filters"><label class="field"><span>Activity from</span><input id="activity-start" type="date"></label><label class="field"><span>Activity to</span><input id="activity-end" type="date"></label><button id="apply-activity-filter" class="button button-secondary" type="button">Apply</button></div></div>
           <div class="account-layout">

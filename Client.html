@@ -1,7 +1,7 @@
 <script>
 (function(){
   'use strict';
-  var state={view:'accounts',bootstrap:null,page:null,selectedAccountId:'',confirmAction:null,guards:{account:false,movement:false,confirm:false,load:false}};
+  var state={view:'accounts',bootstrap:null,page:null,selectedAccountId:'',accountPages:{},accountActivityLoading:false,confirmAction:null,guards:{account:false,movement:false,confirm:false,load:false}};
   var $=function(id){return document.getElementById(id);};
 
   function callServer_(method,payload){
@@ -32,7 +32,7 @@
 
   function unwrap_(response,label){if(!response||response.ok!==true)throw new Error(label+' returned an invalid response.');return response.data;}
   function errorMessage_(error){return error&&error.message?error.message:'FinTrack Lite could not complete the request.';}
-  function setStartup_(mode){$('loading-state').hidden=mode!=='loading';$('error-state').hidden=mode!=='error';$('startup-panel').hidden=mode==='ready';['accounts','expenses','dashboard','allocations','activity'].forEach(function(view){$(view+'-view').hidden=mode!=='ready'||state.view!==view;});}
+  function setStartup_(mode){$('loading-state').hidden=mode!=='loading';$('error-state').hidden=mode!=='error';$('startup-panel').hidden=mode==='ready';$('quick-expense-button').disabled=mode!=='ready'||!state.page||!state.page.selectedAccount;['accounts','expenses','dashboard','allocations','activity'].forEach(function(view){$(view+'-view').hidden=mode!=='ready'||state.view!==view;});}
   function showFormMessage_(id,message){var element=$(id);element.textContent=message||'';element.hidden=!message;}
   function showDetailMessage_(message){showFormMessage_('detail-message',message);}
   function openDialog_(panelId){
@@ -67,7 +67,20 @@
   function loadAccounts_(options){
     options=options||{};
     var payload={selectedAccountId:options.selectedAccountId!==undefined?options.selectedAccountId:state.selectedAccountId,activityStartDate:$('activity-start').value||undefined,activityEndDate:$('activity-end').value||undefined,includeArchived:$('include-archived').checked,activityCursor:options.cursor||undefined};
-    return callServer_('getAccountsPageData',payload).then(function(response){var data=unwrap_(response,'Accounts');if(options.append&&state.page){state.page.activity=state.page.activity.concat(data.activity);state.page.hasMore=data.hasMore;state.page.nextCursor=data.nextCursor;}else state.page=data;state.selectedAccountId=data.selectedAccountId;renderAccounts_();setStartup_('ready');$('quick-add-button').disabled=!data.selectedAccount;return data;});
+    return callServer_('getAccountsPageData',payload).then(function(response){var data=unwrap_(response,'Accounts'),key=accountPageKey_(data.selectedAccountId,data.activityStartDate,data.activityEndDate,payload.includeArchived);if(options.append&&state.page){state.page.activity=state.page.activity.concat(data.activity);state.page.hasMore=data.hasMore;state.page.nextCursor=data.nextCursor;data=state.page;}state.accountPages[key]=data;if(options.selectOnly&&state.selectedAccountId!==data.selectedAccountId)return data;state.page=data;state.selectedAccountId=data.selectedAccountId;state.accountActivityLoading=false;renderAccounts_();setStartup_('ready');$('quick-add-button').disabled=!data.selectedAccount;return data;});
+  }
+
+  function accountPageKey_(accountId,startDate,endDate,includeArchived){return [accountId,startDate===undefined?$('activity-start').value||'':startDate,endDate===undefined?$('activity-end').value||'':endDate,includeArchived===undefined?$('include-archived').checked?'1':'0':includeArchived?'1':'0'].join('|');}
+  function clearAccountPageCache_(){state.accountPages={};}
+  function selectAccount_(accountId){
+    if(!accountId||!state.page)return;
+    state.selectedAccountId=accountId;
+    var cached=state.accountPages[accountPageKey_(accountId)];
+    if(cached){state.page=cached;state.accountActivityLoading=false;renderAccounts_();return;}
+    var account=accountById_(accountId);
+    if(!account)return;
+    state.page=Object.assign({},state.page,{selectedAccountId:accountId,selectedAccount:account,activity:[],hasMore:false,nextCursor:''});state.accountActivityLoading=true;renderAccounts_();
+    loadAccounts_({selectedAccountId:accountId,selectOnly:true}).catch(function(error){state.accountActivityLoading=false;renderActivity_([],false);showDetailMessage_(errorMessage_(error));});
   }
 
   function renderAccounts_(){
@@ -84,7 +97,7 @@
   function renderAccountList_(accounts,selectedId){
     var list=$('account-list'),scrollTop=list.parentElement.scrollTop;list.textContent='';
     var ordered=[];['CASH','EXPENSE','INVESTMENT','FUND'].forEach(function(group){accounts.filter(function(a){return a.accountGroup===group;}).forEach(function(a){ordered.push(a);});});var lastGroup='';
-    ordered.forEach(function(account){if(lastGroup!==account.accountGroup){lastGroup=account.accountGroup;var heading=document.createElement('h3');heading.className='account-group-heading';heading.textContent=groupLabel_(lastGroup);list.appendChild(heading);}var button=document.createElement('button');button.type='button';button.className='account-row'+(account.id===selectedId?' selected':'');button.dataset.accountId=account.id;button.innerHTML='<span class="account-row-name"></span><span class="account-row-balance"></span><span class="account-row-group"></span>';button.querySelector('.account-row-name').textContent=account.name;button.querySelector('.account-row-balance').textContent=formatMoney_(account.balance);button.querySelector('.account-row-group').textContent=account.accountGroup+(account.active?'':' · Archived');button.addEventListener('click',function(){state.selectedAccountId=account.id;loadAccounts_({selectedAccountId:account.id}).catch(function(error){showDetailMessage_(errorMessage_(error));});});list.appendChild(button);});
+    ordered.forEach(function(account){if(lastGroup!==account.accountGroup){lastGroup=account.accountGroup;var heading=document.createElement('h3');heading.className='account-group-heading';heading.textContent=groupLabel_(lastGroup);list.appendChild(heading);}var button=document.createElement('button');button.type='button';button.className='account-row'+(account.id===selectedId?' selected':'');button.dataset.accountId=account.id;button.innerHTML='<span class="account-row-name"></span><span class="account-row-balance"></span><span class="account-row-group"></span>';button.querySelector('.account-row-name').textContent=account.name;button.querySelector('.account-row-balance').textContent=formatMoney_(account.balance);button.querySelector('.account-row-group').textContent=account.accountGroup+(account.active?'':' · Archived');button.addEventListener('click',function(){selectAccount_(account.id);});list.appendChild(button);});
     if(!accounts.length){var empty=document.createElement('p');empty.className='empty-state';empty.textContent='No accounts to show.';list.appendChild(empty);}
     list.parentElement.scrollTop=scrollTop;
   }
@@ -98,7 +111,8 @@
   }
 
   function renderActivity_(rows,hasMore){
-    var list=$('activity-list');list.textContent='';$('activity-count').textContent=rows.length+' shown';
+    var list=$('activity-list');list.textContent='';$('activity-count').textContent=state.accountActivityLoading?'Loading…':rows.length+' shown';
+    if(state.accountActivityLoading){var loading=document.createElement('p');loading.className='empty-state';loading.textContent='Loading recent activity…';list.appendChild(loading);$('load-more-button').hidden=true;return;}
     if(!rows.length){var empty=document.createElement('p');empty.className='empty-state';empty.textContent='No activity in this date range.';list.appendChild(empty);}
     rows.forEach(function(row){var item=document.createElement('article');item.className='activity-row';var label=row.description||activityLabel_(row.type);var amountClass=row.signedAmount>0?'positive':row.signedAmount<0?'negative':'';var sign=row.signedAmount>0?'+':'';item.innerHTML='<div class="activity-main"><strong></strong><div class="activity-meta"></div></div><div class="activity-amount '+amountClass+'"></div><div class="activity-actions"></div>';item.querySelector('strong').textContent=label;item.querySelector('.activity-meta').textContent=formatDate_(row.date)+' · '+activityLabel_(row.type)+(row.counterpartAccountName?' · '+row.counterpartAccountName:'')+(row.status==='VOID'?' · Void':'');item.querySelector('.activity-amount').textContent=row.status==='VOID'?formatMoney_(0):sign+formatMoney_(row.signedAmount);
       if(row.entityType==='MOVEMENT'&&row.status==='ACTIVE'){var edit=document.createElement('button');edit.type='button';edit.className='button button-small';edit.textContent='Edit';edit.setAttribute('aria-label','Edit '+label);edit.addEventListener('click',function(){openMovementDialog_(row.type,row);});var voidButton=document.createElement('button');voidButton.type='button';voidButton.className='button button-small button-danger';voidButton.textContent='Void';voidButton.setAttribute('aria-label','Void '+label);voidButton.addEventListener('click',function(){openConfirm_('Void movement','Void “'+label+'”? Its balance effect will be removed.','Void',function(){return callServer_('voidMovement',{id:row.id});},'Movement voided.');});item.querySelector('.activity-actions').appendChild(edit);item.querySelector('.activity-actions').appendChild(voidButton);}
@@ -149,7 +163,7 @@
   function options_(id,items,blank){var el=$(id);el.textContent='';if(blank!==undefined){var o=document.createElement('option');o.value='';o.textContent=blank;el.appendChild(o);}items.forEach(function(item){var o=document.createElement('option');o.value=item.id||item.code;o.textContent=item.name||item.label;el.appendChild(o);});}
   function eligible_(){return state.page.accounts.filter(function(a){return a.active&&!a.deletedAt&&['CASH','EXPENSE'].indexOf(a.accountType)>=0;});}
   function openExpense_(row){$('expense-form').reset();var sources=eligible_();options_('expense-account',sources);options_('expense-category',state.bootstrap.expenseCategories.filter(function(c){return c.active;}),'Select category');$('expense-category').required=true;$('expense-id').value=row?row.id:'';$('expense-date').value=row?row.date:state.page.today;$('expense-date').max=state.page.today;$('expense-account').value=row?row.accountId:((sources.filter(function(a){return a.name==='Expenses';})[0]||sources[0]||{}).id||'');if(row){$('expense-category').value=row.expenseCategory;$('expense-nature').value=row.expenseNature;$('expense-amount').value=row.amount;$('expense-description').value=row.description;$('expense-notes').value=row.notes;}$('expense-dialog-title').textContent=row?'Edit expense':'Expense';showFormMessage_('expense-form-message','');openDialog_('expense-dialog');}
-  function refreshCurrent_(){return callServer_('getBootstrapData').then(function(r){state.bootstrap=unwrap_(r,'Bootstrap');state.page.accounts=state.bootstrap.accounts;return switchView_(state.view);});}
+  function refreshCurrent_(){clearAccountPageCache_();return callServer_('getBootstrapData').then(function(r){state.bootstrap=unwrap_(r,'Bootstrap');state.page.accounts=state.bootstrap.accounts;return switchView_(state.view);});}
   function loadExpenses_(){var p={startDate:$('expense-start').value||undefined,endDate:$('expense-end').value||undefined,category:$('filter-category').value,nature:$('filter-nature').value,accountId:$('filter-account').value};return callServer_('getExpenseReport',p).then(function(r){expenseReport=unwrap_(r,'Expenses');renderExpenses_();showFormMessage_('expense-report-message','');}).catch(function(e){showFormMessage_('expense-report-message',errorMessage_(e));});}
   function switchView_(view){state.view=view;setStartup_('ready');document.querySelectorAll('[data-view]').forEach(function(b){b.classList.toggle('active',b.dataset.view===view);if(b.dataset.view===view)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});showFormMessage_('page-message','');$('page-loading').hidden=false;var request;
     if(view==='accounts')request=loadAccounts_({});
@@ -197,6 +211,9 @@
   $('global-more').addEventListener('click',function(){loadGlobalActivity_(true);});
   $('from-account').addEventListener('change',syncMovementFields_);
   $('quick-add-dialog').addEventListener('close',function(){state.confirmAction=null;});
+  $('quick-expense-button').addEventListener('click',function(){openExpense_(null);});
+  $('expense-form').addEventListener('reset',function(){setTimeout(function(){if(!$('expense-id').value)$('expense-nature').value='VARIABLE';},0);});
+  document.addEventListener('click',function(event){if(event.target.closest('#quick-expense-button,[data-quick="EXPENSE"]'))setTimeout(function(){if(!$('expense-id').value)$('expense-nature').value='VARIABLE';},0);},true);
   markRequiredFields_();
   initialise_();
 }());
